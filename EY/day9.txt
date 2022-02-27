@@ -1,0 +1,412 @@
+Queue  interface
+Features
+supports  generic non generic  elements   (PriorityQueue   does not supports  non generic  elements)
+supports   duplicate elements
+supports  non null   elements
+o/p is   insertion order
+
+we   have  2 interfaces
+Queue  interface   implemented  by PriorityQueue  class
+Deque  interface   implemented  by ArrayDeque  class
+Deque  extends  Queue interface
+
+methods  of  Deque interface
+void  offer(Object o)
+void add(Object o)
+void push(Object  o)
+Object pop()
+Object poll()// deletes  top element
+Object  peek()// top element
+Object element()// top element
+Iterator  descendingIterator()
+Object  getFirst()
+Object getLast()
+
+
+ArrayDeque  class
+Constructor
+ArrayDeque()
+ArrayDeque(int s)
+ArrayDeque(Collection c)
+
+
+U can traverse elements  of Queue  using  Iterator
+
+
+PriorityQueue class implements Queue interface
+
+supports  only  generic elements
+non null elements   duplicate  element
+
+o/p  is  heap  order
+
+
+Set  interface
+supports  unique  elements
+
+2   interfaces
+Set  implemented by  HashSet and LinkedHashSet  classes
+SortedSet  interface  implemented  by TreeSet  class
+
+methods  of Set  interface  
+it supports  same  methods as List interface
+but  it does not contains
+listIterator()   remove(index i)
+
+
+HashSet
+it uses  hashing technique  to store the  keys
+Hashing technique  uses  hash function to calculate the address   
+this  address  is used as INDEX to store keys
+In HashSet  keys are  stored  by using above  technique
+
+features
+supports  UNIQUE elements
+supports  one null element  
+supports generic non generic elements
+o/p  is  any order  depends on JVM implementation
+
+
+constructors
+HashSet()
+HashSet(Collection c)
+hashSet(int s)
+
+
+
+write a program to  create  a class  Product with 
+id name and price
+insert  2  objects  with   1  pendrive 600
+                           1  pendrive  600
+in HashSet and
+ display 
+
+In the  above  program the  values  for the p1 and p2 objects  are  stored  in Heap area
+(Data  contains in  Product class)
+Compiler/HashSet  treats   these  2 objects as  DIFFERENT objects  even though
+they  contain  IDENTICAL VALUES
+as  they  uses   default  hashCode() and  equals() method
+To  consider  these  2  objects  as  unique  object  we need override  Object class
+ hashCode() and  equals() method
+
+hashCode()
+It is Objcet class method
+Syntax
+int  hashCode()
+returns the  hashcode  for an Object
+it is a  integer values  which  is created  by compiler for  every object
+u can't generate hashCode  for  primitive data types
+
+equals()
+It is Objcet class method
+Syntax
+boolean  equals(Object o)
+Compares  the  references  of   Object
+returns   boolean
+
+note:If  2 objects  hashcodes are  equal then  they are  equal
+Note: compiler  executes  equals  method only if  2 Objects  hashcodes are equal
+
+LinkedHashSet
+it uses  hashing technique  to store the  keys
+Hashing technique  uses  hash function to calculate the address   
+this  address  is used as INDEX to store keys
+In HashSet  keys are  stored  by using above  technique
+
+features
+supports  UNIQUE elements
+supports  one null element  
+supports generic non generic elements
+o/p  is INSERTION order
+
+
+constructors
+LinkedHashSet()
+LinkedHashSet(Collection c)
+LinkedHashSet(int s)
+
+
+SortedSet  interface
+it extends  Set interface
+it o/p elements in ascending order
+
+it  contains  some  extra  methods
+SortedSet  headSet(Object from)
+SortedSet  tailSet(Object to)
+SortedSet   subSet(Objec from , Object to)
+
+
+
+TreeSet  It is a class
+which implements  SortedSet  interface
+Features
+it stores the  data  in tree structure/hierachical  order
+it is used to store  large amount of data
+o/p  ascending  order
+does not supports  DUPLICATE/NON GENERIC/ NULL ELEMENTS
+supports  only  generic elements
+since o/p  sorted order  u  can perform  FAST  retrieval  of data
+
+Constructor
+TreeSet()
+TreeSet(Collection c)
+TreeSet(int s)
+TreeSet(Comaparator  c)
+
+
+To store   User   Defined  class Objects  in TreeSet   your  user defined  class
+
+must implement   Comparable/ Comparator interfaces
+Because  TreeSet  does  not understands  on which  field it will sort as  data
+in side Tree Set is stored  in the class
+
+Performing operations  on Collection elements
+java.util pkg  has  a  class called  Collections
+which contains  static methods   used  to perform  different operations like
+sorting searching reversing  finding min max  on collection elements
+
+methods of  Collections  class
+public  static   void  sort(List l)
+public  static   void  sort(List l, Comarator c)
+public  static   int  binarySearch(List l, int key)
+public  static   void  reverse(List l)
+public  static   int max(List l)
+public  static   int min(List l)
+
+wap   to sort the  integers  of ArrayList  in descending order
+wap   to insert Strings in HashSet and  search  for a 
+perticular  String using Binary Search
+
+Comparable/ Comparator interfaces
+
+
+Comparable  interface
+
+it is present in java.lang pkg
+String class/ wrapper classes implement  this interface
+It is   also called  Functional  Interface
+it is used  to perform   comparison on  any  one  field  of a  User defined  class
+it compares  invoking object  value  with specified object value
+it helps  Collections.sort method  to sort on that field if Collection  contains
+user defined class data
+
+
+it has one  following  method  called
+pubic  int compareTo(Objecct o)
+
+here
+it compares  invoking object  value  with specified object value
+if  both are equal  it returns  0
+if invoking object > specified  object  retruns  +ve
+else returns -ve
+
+
+create a  class called   Person  with  id, name and age
+Store  5 objects  of Person class in ArrayList and sort on names
+
+
+
+
+Comparator  interface
+
+it is present in java.util pkg
+
+it is used  to perform   comparison on more than  one  field  of a  User defined  class
+it compares first object  value  with second object value
+it helps  Collections.sort method  to sort on that field if Collection  contains
+user defined class data
+
+It is   also called  Functional  Interface
+it has one  following  method  called
+pubic  int compare(Objecct o1, Object o2)
+
+here
+it compares first object  value  with sencond object value
+if  both are equal  it returns  0
+if 1st object > 2nd  object  retruns  +ve
+else returns -ve
+
+create a  class called   Person  with  id, name and age
+Store  5 objects  of Person class in ArrayList and sort on names and ages
+
+Assignments
+
+
+create a  class called   Person  with  id, name and age
+Store  5 objects  of Person class in TreeSet and sort on names using  Comparator  Interface
+
+
+create a  class called   Person  with  id, name and age
+Store  5 objects  of Person class in HashSet and sort on names and ages
+
+Map  interface
+
+Used to store the  data in key - value  pair
+where   key  comes  left side  it MUST BE UNIQUE
+value  comes @ right side   it can  be duplicated
+
+
+2  important interfaces
+1) Map  implemented by  HashMap and LinkedHashMap  classes
+2)SortedMap  implemented by TreeMap
+
+methods of  Map  interface
+Map  put(Object  key , Object value)  adds  the   one key - value  pair  in map
+Map  putAll(Map  m)  adds the elements of one map to another
+Set  keySet()  returns keys
+Set  entrySet()   returns  key value both
+Collection  values()  returns  values
+boolean  containsKey(Object key)
+boolean containsValue(Object value)
+Object  get(Object key)  get the  value  for key
+void  remove(Object key)
+Map  replace(Object  key , Object value)  changes  the   one key - value  pair  in map
+
+HashMap
+
+implements  Map
+supports  1 null key   multiple  null values
+key and  values  both can be generic and  non generic
+o/p is  ANY order on  key basis
+uses  Hashing technique to store   keys 
+key must be unique  value  can be duplicated
+
+Constructor
+HashMap()
+HashMap(int s)
+HashMap(Map  m)
+
+Storing  User defined class in Map
+create  a Class called    Employee  with  name  and  des
+create  a Class called    Company with  cname  and  location
+in  HashMap  insert  3 Objects  of Employee as KEY ans
+ 3 objects  of Company  as value and  Traverse and display
+
+o/p
+ajay  a engineer  working in  EY dept at  GOA
+
+
+LinkedHashMap
+
+implements  Map
+supports  1 null key   multiple  null values
+key and  values  both can be generic and  non generic
+o/p is  INSERTION order on  key basis
+uses  Hashing technique to store   keys 
+key must be unique  value  can be duplicated
+
+Constructor
+LinkedHashMap()
+LinkedHashMap(int s)
+LinkedHashMap(Map  m)
+
+
+
+SortedMap interface  Extends Map  interface  provides  some  extra methods
+like
+SortedMap headMap(Object fromkey)
+SortedMap tailMap(Object tokey)
+SortedMap subMap(Object fromkey, Object tokey)
+
+it o/p the  result in  ascending  order  on key  bases
+
+
+
+TreeMap   class
+
+implements  SortedMap
+supports No null key   multiple  null values
+key  must be  always  generic  data and  values  can be generic and  non generic
+o/p is  ASCENDING order on  key basis
+STORES data  in TREE  structure
+used to store large  amount of data
+ACCESSING of data is fast
+key must be unique  value  can be duplicated
+
+Constructor
+TreeMap()
+TreeMap(int s)
+TreeMap(Map  m)
+TreeMap(Comaparator  c)
+
+
+create  a  class  Student  with  name  and course
+create a  class    college  with   name  and location
+insert   3 objecs of  Student as  key
+insert  3 objjects  of  college  as  value
+in HashMap and
+sort  on student name in ascending order
+sort on student cource  in desending order
+and display
+
+
+
+Legacy classes  of Map  interface
+Hashtable and  Properties
+ed
+these  2 classes  implements  Map  interface
+These are  synchronized (thread  safe)
+
+Hashtable
+
+Constructor
+Hashtable()
+
+features
+does not support  null  key & null   values
+key and values  both can be generic and non generic
+contents  can be  traversed through Iterator and  Enumeration
+o/p is any oRDER ON KEY BASES
+Key  must be  unique  value can be duplicated
+
+uses  hashing technique to store keys
+
+Properties
+
+Constructor
+Properties()
+
+features
+does not support  null  key & null   values
+key and values  both can be  non generic
+contents  can be  traversed through Iterator and  Enumeration
+o/p is any oRDER ON KEY BASES
+Key  must be  unique  value can be duplicated
+
+if keys and  values  can  stored  as String  the  we have an extra method
+called
+String getProperty(String k)
+void load(InputStream is)
+used to  load the file
+
+
+write  a  program  to   enter 10  entries key as String value as  Integer in HashMap.
+ Extract value part  and sort values in asending order
+
+
+create  a  class  Student  with  name  and course
+create a  class    college  with   name  and location
+insert   3 objects of  Student as  key
+insert  3 objects  of  college  as  value
+in HashMap and
+extract  value  part  and sort  on college names
+
+
+write  a  program  to create  your  own  Generic class(Integer)
+
+
+for this   program u need  to use   Generic parameters  like
+<T> for  type
+<E> for  element
+<K,V> key and value   e.t.c.
+
+
+
+
+
+
+
+
+
+
+

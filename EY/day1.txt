@@ -1,0 +1,519 @@
+
+Gmail ID: praveen@mazenetsolution.com 
+PW: welcome@123
+
+ https://teams.microsoft.com/l/meetup-join/19%3ameeting_YWMxNTkyYjctZDQ0YS00YWU2LTgxYjQtN2JjN2NhOWRiZjhl%40thread.v2/0?context=%7b%22Tid%22%3a%226193f4ca-f65d-41f3-81b5-2cb2ffc152be%22%2c%22Oid%22%3a%22955579c6-428e-422a-ac1a-146217b31a77%22%7d
+
+
+Introduction to   java  programming
+History
+it was  started   developping in 1995   by  3  scientists
+James  Ghousling  Patrick  Newton and  Mike Sheredon
+These  are also called  green team
+Earlier it wwas  used to develop set top boxes
+it was also named as oak  
+here all files  are saved as extn of  gt (freentalk)
+in  1996   they  have  given a name  called JAVA
+
+RELEASE  ERA
+
+JDK ALPHA BETA   1995
+JDK 1.0          1996
+JDK 1.1          1997
+J2SE  1.2        1998
+J2SE  1.3        2000
+J2SE  1.4        2002
+
+J2SE   5.0       2004   (MAJOR)
+JAVA SE   6.0      2006
+JAVA SE   7.0     2011
+JAVA SE   8       2014   (VERY MAJOR VESRON)
+         9        2017
+         10       2018
+....
+...
+...
+JAVA SE 18    2022
+
+  
+What  are the  applications  of java
+
+used to develop console  based  applications
+used to develop   network  applications
+used to develop web applications  like   tutorial  sites, college  sites
+used to develop enterprise  applications  like  banking  , online shoppings
+used to develops  games   anti virus s/w  
+desktop  applications  like acrobat reader
+smart card
+used in  mobile / android  development
+used in  robotics
+used to develop  internet applications
+
+
+what kind of applications   we can develop from java?
+
+1)   Console  based/  desk top applications  where program  will execute  from 
+main method
+
+2)  web applications   we can develop  using servlets  jsp  html css  java script
+jquery ajax xml   spring MVC
+
+3)  enterprise applications (J2EE)  USING EJB  SPRING BOOT
+
+4)   INTERNET applications   (Java  FX)
+
+
+5)  J2ME  (JAVA 2 MICRO  EDITION) MOBILE APPLICATIONS
+
+
+CHARACTRISTICS   OF JAVA
+
+Simple
+does  not supports  compilcated   features  like  
+pointers   multiple  inheritance at  class  level,  operator  overloading
+structures and unions  e.t.c
+supports   packages  access  scpecifiers   
+Object  oriented
+java is  an  object oriented  programming language
+it supports  oops  concepts  like
+abstraction  inheritance  polymorphism  encapsulation
+aggregation  classes  objects  methods e.t.c
+abstraction:   showing  only  fucntionality  but hiding implementation
+details  (using  abstract  class / interface)
+encapsulation:
+binding  the  data and  code  together  which  keeps safe from  interfernce and
+
+outside  world (java class/ java bean)
+
+polymorphism:(many  form)
+
+one   interface is  used  to  perform  many  forms  of actions
+poly means   many   
+morph means  form
+eg:  method overloading method  overriding
+
+inheritance
+when  one object  aquires  properties and  behaviour of parent object
+it is  called  inheritance
+u can  achieve  it in  java  using  extends/implements key word
+
+Syntax
+class Emp{}
+class Manager extends  Emp{}
+
+Here  Emp  --> Super class
+Manager ---> sub class
+
+Inheritance is a  IS-A relationship
+Emp   is a manager
+aggregation
+
+it  creates  HAS-A relationship
+it is a  form  of association
+when  one class/object depends on another  class
+it is called  aggregation
+when one class referenec is used in another class it is called AGGREGATION
+Eg
+class Address
+{
+    int streetno;
+  String state, city;
+}
+class Emp
+{
+   int  id;
+  String name;
+ Address  add;
+}
+here  Emp class  dependes on  Address class
+EMP  HAS-A  ADDRESS
+
+
+platform  independent
+ability   excecute  java program  on different plat forms  is called
+Platform  Indepenedent
+
+In java
+generation   into  execuatble  code from  java is  achieved  in  2 steps
+1) compilation
+when u compile  java  program  using javac  it generates  byte code
+2) interpretation
+JVM(Java vitual machine) interprets  byte code to executable code
+u can  use  any  os  JVM  it will interpret  
+this  ability is  called platform independent
+
+
+portable
+ability to carry the  java class  file/java  byte code  on different plat forms
+and  execute  it with out recompiling  is called   Portability
+Eg  in the  world  different speed  computers  diffent  os  computers are there
+in all those  computers  u can down load  java program  from internet and successfully
+execute  with out recompiling
+
+architecture  neutral
+means suitable  for  all architectured machine
+Eg in C language   int takes   2 bytes for  32 bit os  and  4 byte for  64 bit os
+in java language   int takes   4 bytes for both  32 bit os  and   64 bit os
+
+secure
+
+java programs  are  more secure
+1) it does not supports  pointers  no memory leakage
+2)  all the  byte codes  are   checked by byte  code varifier for  illgal access code
+3)  since  java  has  it's own environment  called  JRE while
+compiling  java  NEVER INTERACTS WITH os for  memory allocation/file allocation
+this  prevents  interfering  other programs present in  os with java
+So java  programs  are more secure
+robust
+java  programs  are  more  robust  means  they are  very strong
+this  can  be achieved by 2 features
+1) exception handling
+when the exception occured  in the  program ,  ability  to handle the  exception
+so that  program  cannot be  terminated  abonormally is called
+Exception Handling  U can achieve it in java by using try catch throw throws and
+finally key words
+
+
+2) automatic garbage  collection
+class  Student
+{
+   int id;
+}
+Student(int id)
+{
+   this.id=id;
+}    
+main.....
+Student s=new Student(1);
+       s=null;//  garbage
+
+System.gc()
+ 
+in java    the  technique  of  recollecting the  memory  of unreferenced(garbage)
+object is  called   garbage  collection
+It is  happened automatically  u need to call  System.gc() to achieve  this
+Like c++  no need to call delete() method  on every object  each time
+
+
+multi threaded
+thread is a part of program  in java
+Eg   if  u are   having  word document
+then   fomatting at the  same time  printing  makes  2 threads  running
+
+ability  to   run  more than one thread  parallelly / symultaniously/ concurrently  is called
+multi threading
+It improves the performance of the application
+
+Eg Servlet
+
+high performance interpreted
+in java  converting  into a executable  code  is  bit slower  compared  to c/c++
+as   in java   first    compiles  to byte code
+and   jvm  interprets  byte code  to executable  code
+To do this  jvm uses   interpreter  which  interprets whole  byte code  into executable
+code  mean  interpreter  will wait untill WHOLE programs byte code gets generated
+this leads to slow performance
+To increase performance  JVM uses  one h/w component called  JIT(just in TIME)
+Compiler. It  will not  wait  to generate  whole  programs  byte code rather
+it interprets  piece by piece  byte code to executable code
+this reduces creation of idle  time and increases  the performance
+
+
+
+dynamic
+java  provides  lot  of  run time  info
+concepts  like  method overriding/ inheritance  provides  lot of 
+run time  information
+eg
+class  a{}
+class b extends  a{
+main.........
+{
+    b bb=new b();
+}
+}
+
+in the  above program   type of bb is b
+but actually  it is  b & a  both
+this  decision is  not made by compiler at compile  time
+it is made by JVM at  run time
+it is called   dynamic binding
+
+Servlets  JSP generates  dynamic web pages
+whcih  makes  java programming  more DYNAMIC
+distributed
+JAVA IS USED TO DEVELOP  DISTRIBUTED APPLICATIONS  where u can access 
+java programs  from  different locations
+i.e  u can communicate  one JVM with other JVM using
+internet  programming/servlets/jsp/ socket programming /RMI/EJB e.t.c
+
+strongly typed
+int   a=10;
+byte b=a;//error
+
+in java  all the  assignment expressions  all the variables
+are strictly  type compatible
+
+to download  jdk 1.8
+
+go to oracle  web site  
+
+
+
+
+register  and  login
+IDES
+intelliJ
+
+ECLIPSE
+
+JDEVELOPER
+
+NET BEANS
+
+    
+download  eclipse  for  EE developpers
+
+
+
+setting  permanent  path
+
+
+Rules  to write  java class
+
+1) to execute  java program  there  must be a main  method
+as  execution of java program  must always starts  with main method
+
+2) always  u need to save  a program  by  class name
+which contains main method
+
+3) u can write  more than  1 class in a program
+but ONLY ONE CLASS MUST BE PUBLIC
+In that case  u must save ur file   by the  class name
+which contains  main method
+
+4)   all   print statements  must be written  in methods/blocks/constructors
+
+
+
+data  types  in java
+
+
+we have  8 primitive  data types  in java
+
+
+name               width                   range                 default value
+
+byte               1 byte                -128 to 127                 0
+short              2 byte              -32768 to 32767                0
+int                4 bytes             -214 crore  to 214 cr         0
+long               8 bytes             very  very large              0L
+float              4 bytes              single precision format      0.0f
+                                        used for arithmatic cal
+                                        using + - / * 
+double             8 bytes              double precision format      0.0
+                                        used for arithmatic cal
+                                        using sqrt  mod  pow 
+
+boolean             1 bit                0/1 true/false             false
+char                2 bytes              0 to 65535                 min \u00000
+                                                                    max \ufffff
+
+0 to 127   ascii letter
+128 to 255  arabic latin  cyrillic  katakana  letters
+
+
+type   conversion
+It is  also called  Type  casting
+
+converting from  one data type to other is called
+Type casting
+2 types
+implicit  type casting
+
+it  internally happens
+when  lower width  data type  var  is initialized  to 
+higher width  data type  var it is  called IMPLICIT TYPE CASTING
+It  is also called "WIDENING"
+
+int  a=10;
+long  s=a;
+
+explicit  type casting
+
+it  has to be  carried out explicitely
+when  higher width  data type  var  is initialized  to 
+lower width  data type  var it is  called EXPLICIT TYPE CASTING
+It  is also called "NARROWING"
+
+
+EG
+byte b;
+int a=10;
+b=(byte)a;
+
+
+class A
+{
+    public static  void main(String[] args)
+{
+   byte  b=50;
+    b=b*2;
+System.out.println(b);
+}}
+
+
+
+
+
+
+
+variables
+3  types  of variables  java supports
+
+instance variables
+variables  declared at  class level are called  instance  variables
+these will get memory at  run time and  stored in HEAP area
+Eg
+class Person
+{
+  int id;// instance variable
+}
+local variables
+variables  declared inside method/constructor/block are called local  variables
+these will be stored in STACK area
+class Person
+{
+    int id;
+   void  m(int id1) //  id1 is local variable
+{}
+}
+
+class variables
+variables  declared  with static  key word are called   class variables
+these are  shared among many object
+stored  in  class area these will get memory at class loading time
+
+ class  Person
+{
+   static  int l=100;  //  class variable
+
+}
+
+operators
+arithmetic operators
++ - / * += -= /= *=  %  ++ --
+relational operators
+> < >= <= == !=
+bit wise logical operators 
+& | ^  ~ >> << 
+
+
+boolean logical operators 
+& | ^ !
+short  circuit and or  operators
+&&  ||
+ternary  operators
+?:
+
+
+>>     delete   specified digits  from right  side  1110000  64+32+16
+<<  add  specified  0's to right side        11   
+
+
+&&  it will  not check the  second expression if  1st expression is  false
+||  it will  not check the  second expression if  1st expression is  true
+
+but in & |
+ both will  check  both  expression if the  result of 1st  expr is true/false
+
+
+
+
+Architecture  Of  JVM
+
+AT  the  run time   class loader  loads the   class  file  in to  it's  memory
+and  JVM interprets and converts  into executable  code
+
+
+JVM  is  known as Java  Vertual  Machine has  following  components
+Class Loader
+Byte Code Varifier
+Interpreter
+JIT compiler
+Native Method Stack
+Program  counter register
+
+
+when   java program  compiled it generates  .class file(byte code)
+it will travel  around n/w and loaded by class loader  present in
+JVM
+Functions  of JVM
+loads the  byte code
+varifies the  byte code
+executes the byte code
+provides  run time environment to execute the  program
+
+
+class loader
+loads  the  byte code in it's memory
+byte  code varifier
+varifies the  byte code  wether any  illegal  code is present
+
+class area  stores  static  variables
+
+heap area  stores  instance varaibles
+it contains  values  which  got memory  allocated for  variables @ run time
+stack area
+contains  memory  for  local variables
+holds temporary results
+plays  vital role in method invocation
+contains  method data
+
+program  counter register
+it holds   address  of  current  byte code instruction
+which is going to be executed by interpreter
+
+execution engine
+contains  2 parts
+1)  interpreter  : interprets  whole byte code into executable code
+2) JIT compiler :  interprets  piece by piece byte code into executable code
+
+Native  method  stack
+it contains  native method  libraries  used to call other
+program  which is not written  in java 
+This can be achive by Native Method interface
+
+
+
+Diff   between  JVM  JRE and JDK
+
+JVM  --> JAVA  VIRTUAL  MACHINE
+it  is an interpreter for  byte code
+interpretes  byte code to executable code
+it is  not visible
+JVM is platform depenedent  because  diff os  have  diff  Versions of JVM
+but all  JVM interprets  same byte code
+
+JRE-- > JAVA  RUNTIME  ENVIRONMENT
+contains  jvm+some  library  files  like
+io, net, lang, util, sql, awt, applet  packages
+it is  visible
+u can  execute  java program  from  only  JRE  through IDE but not from
+Command Prompt
+
+JDK   -> JAVA DEVELOPMENT KIT
+Contains  JRE + DEVELOPMENT tools  like  javac javap  javah  java appletviwer
+rmi wsimport  wsgen
+
+it is  visible 
+from this  u can execute  program  in IDE also and CMD also
+
+
+1)   write  java  program  to  execute  from  command  prompt
+2)   write  java  program to find  sum of  2  no  by reading  data
+from  key board(user  input)
+3)   write  java  program to find  sum of  2  no  by using   command line
+arguments
+1) in cmd
+2) in eclispe

@@ -1,0 +1,285 @@
+Nested  Interfaces
+Like classes interfaces can also be nested
+
+advantages
+1) imporves  readability  code maiantainability  and  achieves code optimization
+as  all  interfaces are  specified at same location
+2)  nested interfaces also  helps you to access  the all the  contants of
+outer interfaces also
+
+nested  interfaces   must have  public or  default access specifiers
+as  top   level interfaces  also have
+
+we can  nest interface  within interface
+we can nest  ineterface within class
+we can nest class  within interface
+
+
+another  type  of  non static  nested class  is  anonymous inner class
+
+anonymous inner classes  means  classes are  created  wth out  name
+such  classes  must be  defined  if  there is a class Hierarchy
+compiler  will provides  name  for  such classes at back ground
+such  classes   reducess the  generation of . class files
+improves the readability
+reduces lots  of codes
+Syntax
+
+Classname   obj=new ClassName()   //   obj  is  reference of anonymous inner class
+{  
+    body;
+
+};  // ends
+
+create  an  interface   
+interface   i10
+{
+    void k();   
+ int  s=100;
+}
+ implement  above  interface  using Anonymous inner  class
+
+packages and access specifier
+
+mode of  access         private           default           protected                 public
+
+within a class            Y		    Y	                Y                       Y	
+
+
+within package            N                 Y                   Y                       Y
+ sub class
+
+
+within package           N                  Y			Y			Y
+non  sub class
+
+
+out of package           N		    N			Y			Y
+ sub class
+
+
+out of package		 N	            N			N			Y
+non sub class
+
+
+    Packages
+these are the collection of  classes  sub packages and interfaces
+these are  the containers  for  classes  and interfaces
+partitioning of class name  spaces into managable  chunks are called packages
+
+advantages
+provides  access protection
+eliminates  naming collission
+
+types  of  Packages
+2 types 
+1) built in        java.util java.lang  java.io  java.awt java.net java.sql java.applet
+2) user defined   
+
+when   developer  creates  own package  it is called  User defined  package
+it can  be achieved  by using
+package  packagename;
+It  must be a First statement  in program
+
+then  you can write  import  statements and  classes/interfaces
+
+
+how to execuete  package program  from command  prompt?
+
+  compilation
+
+javac    -d   .    filename.java
+-d   tells  where  to store   class file
+. tell   class file  must  be stored in  current dir
+java  packagename.filename
+
+how to access  one package  program  from another  package  program?
+1)   importing whole pacakge(*)
+it imports  all classes and  interfaces  of that  package
+
+it increases compile time
+Syntax
+import java.util.*
+2) importing   pacakgename with class or interface name
+it imports    corrosponding class/ interface name
+syntax
+import  java.util.Scanner   
+java.util.LinkedList
+3)  with out import statement
+it uses  full qulalified  class/ interface  name
+Syntax
+java.util.Date  d=new java.util.Date();
+
+
+
+SUB PACKAGES
+
+when u write  one package  within another  package  it is called  sub  package
+
+syntax
+pkg1.pkg2.pkg3.pkg4....
+
+in this  pk1 contains  pkg2
+pkg2 contains  pkg3
+pkg3 contains  pkg4
+
+
+create  class called  person with  private   fields  id name and age
+and  initialize  the  valuses  and  access  and  display  in another  class  called
+
+PersonProgram   through main  method
+
+
+create   pkg called noida   with     class name Simple
+which  contains   static  block , protected void method,
+public method  which returns  String and  public static  contant
+
+create   pkg called    up  with  class name   SimpleMain
+which contains  main method and   create  object  of  Simple class
+and access members of Simple  class
+
+ 
+java built  in packages
+java.lang.*
+
+it is  a  default   pacakge  automatically   imported in the program
+no need  to import   by developer
+it contains  many classes  
+Object
+String
+StringBuffer
+StringBuilder
+Exception
+Thread
+System
+Runtime
+
+Wrapper classes  like Integer Double  Character  ......
+
+and  interfaces
+
+Runnable  Cloneable  Comparable
+
+java.util.*
+java.io.*
+java.sql.*
+
+String class
+it is  a   class
+it is  sequence  of IMMUTABLE (not aterable)  characters
+
+String is  a final  class  it  cannot be sub classed
+
+class  Abc  extends   String  // error
+{
+}
+
+how to create  A string in java
+2  ways
+1) using  String  contructor  (new key word)
+
+String class provides following contructors
+String()
+String(String s)
+String(byte[] b)
+String(char[] c)
+
+when  you create  String using new key  word  it stores it's value
+in the  heap area
+Eg
+String s=new String("welcome");
+String s1=new String("welcome");
+in the  above code 2  welcome's  are  created
+
+
+2)  using  literal  technique
+
+String s="welcome";
+String s1="welcome";
+
+in  the above  code  ONLY 1 welcome  is created
+here   welcome  is stored in  String Constant pool  (memory area in heap area)
+
+why Strings are  IMMUTABLE
+suppose 5 reference  variables  refers  to same  String Object
+If any any ref  varible  changes that  value
+it effects all other reference variables also  
+That is way Strings are IMMUTABLE
+
+create  a  String using   following  characters
+b a n g a l o r e
+
+
+methods  of String class
+boolean  equals(String s)
+compares  values  of  2 Strings
+boolean ==    compares  references  of 2 String
+boolean equalsIgnoreCase(String s)
+int compareTo(String  s)
+compares the  values of the 2 Strings and returns integer
+if  2   Strings are  equals  it returns 0
+if  1st String > 2nd String it returns +ve
+else returns -ve
+
+int compareToIgnoreCase(String s)
+char  charAt(int i)
+extracts  1 character at a time
+int length()
+void  getChars(int start, int end, char[] buff, int arrayindex)
+extracts more  than 1 character of a String
+String intern()
+creates the duplicate copy of the String
+int indexOf(String s)
+returns the  index  of first occurance of String
+int lastIndexOf(String s)
+returns the  index  of last occurance of String
+String substring(int index)
+returns  sub string
+byte[]  getBytes()
+static  String valueOf(int|byte|double|StringBuffer  )
+converts any type to String
+String[] split(String regexpression)
+saperates  parts  of String
+boolean startsWith(String s)
+boolean  endsWith(String s)
+String   trim()
+String concat(String s)
++
+char[] toCharArray()
+converts  to characters
+String toUpperCase()
+String toLowerCase()
+String replace(char c1,char c2)
+
+
+extract  day  from above string using getChars() method
+
+
+
+
+
+2) using  literal  technique
+
+
+w.a.p to  read  the  sentence and   count  no  vowels(small letters)  using switch  case
+
+
+HOW TO CONVERT   class  data(Object ) to String?
+
+
+to convert  Object  into  String   java's  Object class provides
+follwing method
+pubic String toString()
+
+
+You need  to override   this  method   in your  program
+
+
+write   a  program   check entered String is pallindrome  or not
+use  String class Libraries
+java  program  to find the max & min occuring character in the  String
+java  program  to find theduplicate character in the  String
+
+
+
+

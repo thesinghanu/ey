@@ -1,0 +1,383 @@
+concurrent  Collections
+Traditional collections    like  ArrayList  LinkedList  HashMap
+ are  Non synchronized in nature  and hence   there is no thread  safety
+Means  only one thread  of this  class  performing any  operations
+then   other thread  can't perform  other  operation  Concurrently
+as  single  thread  is allowed
+This  slows down the  performance of the  application
+Eg: in the array list suppose one thread is  iterating elements  of array list
+at the  same time  other thread can't add/remove elements
+as  only single  thread  is  allowed
+untill  that thread  finishes traversing of all elements
+other thread can't perform  other operations  else
+it throws ConcurrentModificationException
+If any traditional collections iterator throws  ConcurrentModificationException
+such iterator is called Fail fast
+
+in  Concurrent  collection all  the  collections  are  synhronized
+in nature  and  it allows  multiple  thread  to perform  operations  parallelly
+or  concurrently
+Eg  In array list one thread  is iterationg at the  same time
+other thread can add/remove elements
+This improves the  performance of the application
+While  iterating the elements  of con current collections  if we added  any elements
+then  iterator  of such collection will not throw ConcurrentModificationException
+If any concurrent collections iterator   does not throw  ConcurrentModificationException
+such iterator is called Fail Safe 
+All  concurrent  collection classes are present in  java.util.concurrent  pkg
+
+List  interface  we have
+class called
+CopyOnWriteArrayList   it implements  List
+
+Concurrent   collections  for  Queue  and  Deque interfaces
+
+BlockingQueue  interface  (used to create  a Bounded queue)
+implemented  by
+ArrayBlockingQueue
+SynchronousQueue
+PriorityBlockingQueue
+LinkedBlockingQueue
+DelayQueue classes
+
+TransferQueue  interface  (used to create  un bounded queue)
+implemented  by
+LinkedTransferQueue interface
+
+
+BlockingDeque  interface  (used to create  abouded Deque)
+implemented by
+LinkedBlockingDeque  class
+
+
+Set   interface   Concurrent collection  classes
+CopyOnWriteArraySet  it implements  Set  interface
+
+ConcurrentSkipListSet   it implements   SortedSet
+(o/p  is ascending order)
+
+
+Map   interface   Concurrent collection  classes
+ConcurrentHashMap
+it implements  Map  interface
+ConcurrentSkipListMap  it implements   SortedMap 
+(o/p  is ascending order on keys)
+
+Internationalization
+I18N
+Date Formatting
+Number Formatting
+Time Formatting
+Currency Formatting
+String Formatting 
+Resource  Bundle
+
+I18N  is a mechanism  to create   an application   that  can be   adapted   to
+different languages and different regions
+It is  a   power full concept    of java   if you   are    developping   an application
+and want   to  display   messages   currencies dates  times   e.t.c  according    to
+specific  region  or language
+
+
+Localization
+L10N
+It is  mechanism to create  an application    that can be adapted    to specific  language and
+region   by adding  locale specific text and component
+
+
+Date  formatting
+
+DateFormat  class
+It is present in java.text.* package
+
+methods of DateFormat  class
+static   getDateInstance(int style ,   Locale  locale)
+returns  the  Object  of DateFormat
+String   format(Date  d)
+formats  date  into String
+
+Locale  class
+it is present in  java.util pkg
+represents  geo graphical region
+Constructor
+Locale(String language, String country)
+
+
+Another   way to format  date  is SimpleDateFormat  class
+It is present  in java.text.* pkg
+Constructor
+SimpleDateFormat(String pattern)
+
+methods
+String   format(Date  d)
+formats  date  into String
+
+Date   parse(String s)  throw Exception
+parse   String into Date
+
+
+1645595184676
+
+
+pattern symbols
+G     era
+y   year
+M  month   MMMM(july)  MMM(jul)  MM 07
+w  week in year
+D   day count  in year
+d  day  in   month
+H 0-23  hor format
+a am pm
+h  12 hr format
+m  minute
+
+
+
+s second
+S millisec
+E day name
+
+currency  and Number  fomatting
+
+achieved  by  NumberFormat class
+present in  java.text.*  package
+
+
+methods
+static  NumberFormat  getInstance(Locale  l)
+static   NumbetFomat  getPercentInstance(Locale l)
+static   NumbetFomat  getCurrencyInstance(Locale l)
+String  format(double|int|long|short  n)
+
+fromats  no
+void setGroupingUsed(boolean flag)
+void setMinimumFractionalDigits(int  digno)
+void setMaximumFractionalDigits(int  digno)
+void setRoundingMode(RoundingMode.UP|DOWN)
+
+
+PARSING NOS
+
+converting String/Parsing  no to Number
+
+void  parse(String no)  throws  ParseException
+
+
+Java  String Formatting
+String   class  contains  a  static  method called
+format()    used   format  the String
+
+Syntax
+public static    String format(String format,  Object args)
+
+
+It uses   following  format  specifiers
+
+%a       floating point
+%b        any type
+%c       character
+%d       int
+%f        float
+%s       any  type 
+
+
+Resource  Bundle
+Used to internationalize  the messages
+provides  mechanism to globalize the  messages
+
+class
+ResourceBundle  present  in java.util pkg
+
+methods
+static   ResourceBundle  getBundle(String  name)
+returns instance   of  ResourceBundle
+
+static   ResourceBundle  getBundle(String  name,  Locale  l)
+returns instance   of  ResourceBundle  w.r.t  locale
+
+String  getString(String  key)
+returns the value  for respective  key  from  resource   bundle
+
+
+craete  a  File  MessageBundle_en_US.properties must be stored in src
+folder
+
+
+
+practice  differnt  programs   for   Currency Date  Time  Number
+formatting for  different patterns/locales/languages
+
+create  Resouce  bundle  for UK and  fetch the   message  from  the   
+Resuorce  bundle  using ResourceBundle  class
+
+
+java.io package
+This  package  provdes  Interfaces  Classes to read  and write the  Data
+You  can  read  the   data  from File/Socket   e.t.c.
+
+In java  2 kinds  of data  available
+1) byte  data
+2)  character data
+
+byte  data 
+it is  represented  by bytes  0s 1s
+it is  handled  by Streams
+
+
+character  data
+it is  represented  by characters
+it is handled  by  Readers  Writers   and  Streams
+
+
+Streams
+
+Stream represents  flow of  data
+it handles  byte  data
+java  provides   2  Streams as a  super class
+to read and write  the   data
+
+1)InputStream  :
+It is a  Super class used to read  a  data  from source file/socket
+(Here  File must exist)
+2)OutputStream :
+It is a  Super class used to write a  data  to destination  file/socket
+
+Methods  of  OutputStream
+
+public  void  write(byte[] b) throws  IOException
+writes   bytes of data  to  destination
+public  void  flush() throws  IOException
+flushes  or clears  the Stream
+public  void close()  throws IOException
+closes  the  Stream
+
+
+
+Methods  of  InputStream
+
+public  int read() throws  IOException
+reads  the  bytes  of data  from source
+public  int available() throws  IOException
+reads  the  avaialble  data  from Stream
+public  void close()  throws IOException
+closes  Stream
+public  void skip(int  n)  throws IOException
+skips  specified  characters   while reading
+
+
+File
+It is a  collection  of Data
+it is  a Class
+Constructor
+File(String name)
+methods
+boolean  createNewFile() throws  IOException
+boolean  isFile()
+boolean   isDirectory()
+String  getAbsolutePath()
+String getCanonicalPath()
+boolean delete()
+
+e.t.c
+
+
+
+sub classes  of   OutputSteream  
+FileOutputStream
+Used   to write  a  information to file
+BufferedOutputStream
+Attaches   buffers  in Stream  and Used   to write  a  information to file
+Write  operations  are  done  very fast
+DataOutputStream
+old  class  used  Used   to write  a  information to file
+PipedOutputStream
+used Used   to read & write  a  information to file and from file SYMULTANIOUSLY
+ByteArrayOutputStream
+uses  Array as  destination to write a data
+FilterOutputStream
+PrintStream
+used  to write  all  types  of data 
+ObjectOutputStream
+Used  in SERIALIZATION
+
+
+sub classes  of InputStream
+FileInputStream
+Used   to read  a  information from file
+BufferedInputStream
+Attaches   buffers  in Stream  and Used   to write  a  information to file
+Write  operations  are  done  very fast
+DataInputStream
+old  class  used  Used   to read a  information from file
+PipedInputStream
+used Used   to read & write  a  information to file and from file SYMULTANIOUSLY
+ByteArrayInStream
+uses  Array as  source to write a data
+FilterInputStream
+SequenceInputStream
+used  to read data  from  more than one  file 
+ObjectInputStream
+Used  in DE-SERIALIZATION
+
+
+Write  a  program  to    write   info into a text  file
+and  read  and  display
+
+FileOutputStream  class
+Constructor
+FileOutputStream(String file, boolean append)  throws  IOexception
+used to  write  a  data  to file
+
+
+
+FileInputStream  class
+Constructor
+FileInputStream(String file)  throws  FileNotFoundException
+used to  read a data  from file
+
+
+
+BufferedoutputStream class
+ attaches  buffers  in the  Stream
+so  instead  of  calling  write()  method agaain and again
+we can store the  entire data  in Buffer  and at once  we write  all data
+it  reducess no of  write  operations
+
+when u write  data  using  above  class
+
+call  flush() method
+Constructor
+BuffredOutputStream(OutputStream os, int bufsize)
+
+BufferedInputStream class
+BuffredInputStream(InputStream is, int bufsize)
+
+writing to more than 1  file
+
+ByteArrayOutputStream class
+
+Constructor
+ByteArrayOutputStream()
+
+it has a  extra method
+
+void  writeTo(FileOutputStream  os)
+
+wap  to write  a  Sentence  to more than  1 file
+
+wap  to read  the  contents  of the File    using ByteArrayInputStream
+
+Contructor
+ByteArrayIputStream(byte[] b, int offset,  int length)
+
+
+wap  to read   contents  of  more than  one file
+SequenceInputStream
+constructor
+SequenceInptStream(is1, is2)  reads  more than  1 file
+SequenceInputstream(Enumeration  e)
+
+
+write and read  the  contents  of Thread  symultaniously  using
+PipedInputStream and PipedOutputStream  classes
+

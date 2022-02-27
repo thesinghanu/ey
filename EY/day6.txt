@@ -1,0 +1,391 @@
+StringBuffer  class
+used   to create  Mutable  sequence of  characters  
+means  you can perform modifications  in SpringBuffer  characters  like
+u can add/delete/replace/reverse/append the  specified characters
+
+
+You can   create  Strings uisng  StringBuffer class  through  following Constructors
+StringBuffer()
+StringBuffer(String s)
+StringBuffer(int size)
+StringBuffew  not extends   String class
+
+i.e  Some of the String  methods  not present in StringBuffer
+
+
+methods  of StringBuffer
+
+int capacity()
+default calapcity  is 16
+capacity  depends  on  which  contructor  u use
+if  u use   default contrcutor  
+then default capacity is  16
+if  u added    characters   whose length is > 16  and <= 34 then   capacity =34(oldcapacity*2+2=34)
+if u addded  characters  whose length is >34  the  capacity is  that much length
+
+if  u use   parameter contrcutor  
+then capacity is  16+length  of string used in  parameter
+
+
+StringBuffer  insert(int index,  String s)
+StringBuffer append(String s)
+StringBuffer delete(int start, int end)//   start  includes   end  excludes
+StringBuffer replace(int start, int end, String s)
+StringBuffer   reverse()
+void   setLength(int length)   
+void  setCharAt(int index, char  c)
+void  deleteCharAt(int index)
+
+
+
+create  a  String  called   Hello  from  StringBuffer  and  convert into Hi
+
+
+using  String and  StringBuffer  methods  check entered String is Pallindrome  or not?
+
+Though StringBuffer creates   Mutable  sequence  of characters  it's performance is Slow
+as  it is  Thread safe
+means it is SYNCHRONIZED  i.e MORE  than 1 thread  cannot access StringBuffer method
+concurrently
+i.e methods of StringBuffer class  gets  executed in order
+
+
+To improve the  Performance  we  another class called
+StringBulider
+
+
+
+used   to create  Mutable  sequence of  characters  
+means  you can perform modifications  in SpringBuilder  characters  like
+u can add/delete/replace/reverse/append the  specified characters
+
+
+You can   create  Strings uisng  StringBuilder class  through  following Constructors
+StringBuilder()
+StringBuilder(String s)
+StringBuilder(int size)
+StringBuilder  not extends   String class
+
+i.e  Some of the String  methods  not present in StringBuilder
+
+
+methods  of StringBuffer and StringBuilder are same  except they Returns  StringBuilder
+
+
+
+ StringBuilder creates   Mutable  sequence  of characters  it's performance is FAST
+as  it is NOT Thread safe
+means it is NOT SYNCHRONIZED  i.e MORE  than 1 thread  can access StringBuilder method
+concurrently
+i.e methods of StringBuilder class  gets  executed in ANY order
+
+
+ExceptionHandling
+
+
+Exception  is also  a class  from java.lang pkg
+Exception is a an abnormal   condition  which  is occured  in Code  sequence at  run  time
+when   exception occured  in the  program  (like  divide by 0)
+then if we have  not handled then   program  will terminate  abnormally  and we can't maintain
+the smooth  flow of an application
+
+Solution : Exception  Handling
+when the  exception  occured  in the  method  of the  program
+then  we can  handle that  exception in that  method  only  or  we can  propagate
+that  exception  to another method there  it will be  handled  and processed
+So that  we can terminate the  program  normally and we can maintain the  smooth  flow
+of application
+This  concept of  HANDLING handling exception is called
+Exception Handling
+It is  achieved through  try catch throw throws and finally key words
+
+
+when  the  Exception is  occured then  JRE  will check  wether
+any  exception handler  is used or not
+if used then  through that  handler  JRE  handles  exception
+
+if JRE does not find any handler then  it uses  it's  own / default handler
+and  print error information. Error  information is called "Stack Trace"
+printed  through error stream in RED color
+It contains  line no, name of execption, method name where execption occured,
+type of exception  and the  Exception message e.t.c
+
+Exception  Hierachy
+Super class  of all class in java is Object
+
+Super class of Exception is Throwable  present in java.lang pkg
+
+Throwable  has   2 children
+1)Exception 2)Error
+
+Exception  has    2 types   
+1) checked Exception
+These  will occur at compile  time
+these  extends  Throwable class except  Error and  RunTimeException
+these are  ocuured   even develop not make  any mistakes
+these are  not under  programmers  control
+these are used  in throws  clause
+Eg
+ClassNotFoundException   IOException SQLException  InterruptedExcetion
+CloneNotSuportedException
+
+2) unchecked
+These  will occur at Runtime  time
+It's  super class is  RunTimeException
+these  extends  Throwable class 
+these are  ocuured  because of  developer mistakes
+these are  under  programmers  control
+these are also used  in throws  clause
+Eg
+ArithmaticException   NullPointerException ArrayIndexOutOfBoundsException  
+ClassCastExcetion
+NumberFormatException
+
+3)Error
+error is  irrecoverable
+where  if we  violate  programming language  rules, bad programming practices then
+ these are occured
+Eg
+  JVM error
+AssertionErroor
+OutOfMemoryError
+StackOverFlow  
+
+
+
+
+How  to  handle  an Exception
+It  is  achieved throgh  following key words
+1) try 
+2)catch
+3) throw
+4)throws
+5)finally
+
+try :
+it is  a  block  of code  which may contain exception or may not  contain exception
+written in block/method/constructor
+
+catch
+it is a HANDLER  used  to handle an exception
+it is  written  after  try block
+can't be written   with out try
+
+Syntax
+try
+{
+     code;
+}
+catch(Exception e)
+{
+   code;
+}
+
+super  class of Exception is Throwable
+it has  lots  of methods
+
+void printStackTrace()  prints stack trace
+String getMessage()
+gets the Exception message
+
+You can also  handle teh Exception  by specifying  Super class name of Exception
+in catch  block  as Exception catches  all kinds  of  sub class Exceptions
+
+
+
+
+forms  of try  catch
+1) try with   multiple  catch
+2)  nested  try
+3)   try  catch  in catch
+
+1) try with   multiple  catch
+
+
+Syntax
+try
+{
+   code
+}
+catch(subclassexception e){}
+catch(subclassexception e){}
+catch(subclassexception e){}
+catch(superclassexception e){}
+
+
+in case  of  try with  multiple catch
+
+all the   exceptions  in the catch  block must  be  specified in  order
+i.e  in catch  block 1st all  sub class exceptions  specified
+at last  super class exception specified
+
+at  a  time only  one exception will occur in try block 
+and  only one exception  will  be handled   in one TRY - CATCH block
+
+MIN  no of catch block  for every try is  1(if  finally not used)
+
+intead   of writing  multiple  catch   block   in  saperate  catch  statement
+we  can spacify all   sub class  exceptions   in one catch
+by saperating | operator
+In this  technique  don't specify  super class exception
+along with sub class exception by saperating | operator
+
+
+nested  try
+
+we can write   try within try
+syntax
+try
+{
+   code
+
+      try
+{
+      code
+   }// inner try closed
+  catch(Exception e){}
+}// outer try closed
+catch(Exception e)
+{
+}
+
+
+write  a  program   to illustrate    try catch  in catch
+
+write  a  program  to enter   integer  no 
+if  no is +ve  display  it you entered  correct  no
+else  create  arith metic exception and handle  it 
+
+     how  to   write  try catch  in  catch?
+when  u write   try catch  in catch
+the  exception object name  of outer catch  is different than 
+ exception object name  of inner catch
+
+
+throw  keyword
+used to throw / create   an Exception Manually
+Syntax
+throw  throwable instance;
+
+here    throwable instance  must be of the  Type Throwable  class
+
+Eg:
+throw   new  ArithmeticException();
+
+try{throw  new  IOException(String message)
+}
+catch(Exception e){}
+
+try{throw new Exception()}
+catch(Exception e){}
+
+throw  new  RuntimeException()
+
+try{throw  new Throwable()}
+catch(Exception e){}
+
+rules 
+
+1) must  be used inside the  method
+2)  must  follow  object
+3) used  to throw  an exception
+4)  used  to rethrow an exception
+5) u can't  use  more than  1 throw in a same method
+6)  u can't throw multiple  exceptions  using
+throw keyword
+7) after  throw statement in a method  don't write  any code
+else  u will  unreachable code  compile time error
+8) when u  throw  checked/super  class exceptions  using throw key
+word  sorround the  code with try catch  block
+
+
+WRITE  A program  to enter the  age   from the   keyboard
+if  age  >= 18  display    ur  eligible  to vote
+else
+throw   arithmetic exception and  handle  it
+
+throws   key word
+used to  declare an exception
+it is  used  to  declare  in method  signature
+
+
+Syntax
+public   static  void main(String args[]) throws IOException
+
+In java  some  method  like  sleep() method of Thread  class
+
+forName()   method  of class Class 
+close() method  of  InputStream  class  throws
+InterruptedException, ClassNotFoundException IOException  respectively
+To  get  rid of  such exceptions  we declare  the  method  with  throws keyword 
+when  we used  above  methods in any  methods
+
+
+
+normally   we  declare   CheckedExceptions  using  throws  keyword
+this  removes  compile  time  errors
+
+but we can also  declare   UncheckedExceptions  using  throws  keyword
+but  this  one   will  not effect any thing
+
+
+
+
+in  3  situations  I will  declare  my method  with throws  Key word
+1)Exception Occured and  handeled
+2)Exception Occured and not  handeled
+3)Exception Not Occured
+
+
+throws  must be  used in method signature
+throws  must follow    class
+u  can  declare  more than  one  Exception  using  throws
+used  to declare an  exception
+
+
+
+finally
+it is  another  key word  used in Exception Handling
+
+1)  it is a  block   of  code  which  always  executes  irrespective  of wether
+exception occured or  not occured
+
+2)  if the  exception occured  but  not handeled  then also  finally executes
+3)  finally  always  exected after the  try  block  / try  catch  block
+4) JVM always  executes  finally   just before  terminating the program
+that  is  why   any  resorces  u want to close  like  file/connection/socket
+will be closed in this  block
+5)if  method returns  some  thing then also finally  executes  before  method
+returns  to caller  if i handeled  the exception  in case exception occured
+6)  finally must written after  try or after  try-catch
+7) there  must  be only 1 finally block for  every  try / try-catch block
+8) we  can also write  try-catch/try-catch-finally/try-finally
+inside finally
+
+9)finally  will  not execute  when  user exit from  System.exit(0) statement
+
+
+
+try{}
+catch(){}
+finally
+{
+      code
+}
+OR
+try
+{}
+finally
+{
+      code
+}
+10)   finally cannot be written  with out try
+
+
+
+
+  program to  write   try-catch-finally  in finally  block
+write  a program  to illustrate   throw  is  used  to  retrhow  an  exception
+write  a program  to find   division  of  2 no
+ with  exception handling  feature using try catch and  finally
+

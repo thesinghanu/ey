@@ -1,0 +1,351 @@
+advantages of methods
+code reusability
+code optimization
+
+Method  overloading
+used to improve the READABILITY of the  program
+in a program  in  a same  class  when  more than  1 method is defined  with same  name
+but no of  paramters  are  different 
+OR
+in  a same  class  when  more than  1 method is defined  with same  name
+SAME no of  paramters  BUT the  data  types of the parameters  are different it is called
+method overloading
+
+it is  also called "COMPILE TIME POLYMORPHISM"
+advantages of method OVEROLAODING
+improve readability
+code reusability
+code optimization
+
+
+calculate sum of 2, 3 and 4  nos
+
+
+public class Overload1 {
+ public  void  sum(byte a, byte b)
+ {
+	 System.out.println("byte  version....");
+	 System.out.println(a+b);
+ }
+ public  void  sum(long a, int b)
+ {
+	 System.out.println("Long Int  version....");
+	 System.out.println(a+b);
+ } 
+ public static void main(String[] args) {
+	Overload1 o1=new Overload1();
+	o1.sum(10,10);
+	o1.sum(20,20);
+}
+}
+
+
+we can also  over load  a  method   which  returns  some thing
+
+public class Overload1 {
+ public  String   add(String s1, String s2)
+ {
+	 return   s1.concat(s2);
+ }
+ public  float  add(double d1, double d2)
+ {
+	 return  d1+d2;
+ } 
+ public static void main(String[] args) {
+	Overload1 o1=new Overload1();
+	System.out.println(o1.add("hello","world");
+System.out.println(o1.add(2.0,2.0));
+}
+}
+
+
+Contructors
+used  to initialize the state  of the  object
+it's name must be same as class name
+if  program   does not  contains  any  constructors then   compiler
+supplies  DEFAULT  constructor
+in syntax  constructors looks similiar  to methods  but does not have return type
+contructors name must be SAME AS CLASS name
+contrutors  can be private  public  protected default but but they must not have
+abstract  static  and  final
+apart form  initilizing  object  constructors can also  performs activities like
+starting thread e.t.c
+Like methods  constructors  are also overoaded
+syntax
+class Person
+{
+   Person()
+{
+   System.out.println("Default");
+}
+   Person(String name)
+{
+   System.out.println("Hello  "+name);
+}
+}
+
+
+Using  Contsructors  methods  and   Object   create  Student class
+with  id name and city  initialize   3 objects and  dsipplay
+
+Note Private  constrcutors  CNNAOT BE  INSTANTIATED  FROM OUT OF THE  CLASS
+
+
+WRITE  program  to create  product  class  with id name category and price
+create  5 objects  of product  through  array  and disply  by using  constructors and methods
+and objects
+and  sort  on product price
+
+
+write   a java program  to  impelment  copy  constructor  in java
+(copies  one  object value to other object)
+
+
+Library management system
+1st phase  core java  with collection framework
+2nd phase  core  java with   collection & jdbc
+3rd phase  servlets  jsp html css  js
+4th phase  spring spring mvc hibernate
+5th phase  sprig boot jpa
+6th front  end react server side spring boot  / CRUD
+
+1 GROUP     4 MEMBERS
+this  keyword
+
+1)  used  to refer a  current class instance  variable
+Syntax  this.instancevarname;
+Prove  that   this  refers  to current class instance  variable?
+
+
+2) used to invoke  current class constructor
+when  u  used to inoke the current  class constructor  call  to this  must be
+always  1st statement  in the  Current class  construtor
+beacuse  contructors must  be evaluated   from top to bottom
+other  wise u will get  compile time error
+Syntax
+this()  invokes   current class default constructor
+this(a)  invokes   current  class  1 parameter constructor
+
+3)  used to invoke  current class method
+4) used as  paarameter in method call
+5) not used  in static  context
+
+class  A
+{
+    A()
+{
+}
+
+   A(int a)
+{
+   
+
+}
+
+
+A(int a, int b)
+{
+   
+
+}
+
+
+
+   this
+------------------->Object
+
+
+
+public class Book {
+	
+	public Book() {
+		this();//  error
+		System.out.println("Default constructor");
+	}
+	
+public static void main(String[] args) {
+ Book b=new Book();
+}}
+
+
+
+static key word
+class a
+{
+      int a;
+    void  m(static  int a1)
+{
+}
+
+
+static   key word is  applied to  methods
+instance  variables blocks and  nested  classes
+
+static   key word is NOT  applied to  TOP LEVEL  CLASSES
+local variables  and  constructors
+
+static scope  is  bound to class level
+u cannot use this   keyword  in this  context also
+as  this scope bound to object
+
+static  to variables
+syntax
+static  int  a=100;
+
+when u apply  static  to a variables  such  variables  gets the  memory at  class
+loading time .  These  will be  stored in  class area
+static  represents  common properties  of the  Object
+like   emps of same company students of same college e.t.c
+static  variables  shared  among multiple  objects
+static varaibles  can also be  modified
+
+static  to methods
+
+static  keys word is also applied  to methods
+
+when u apply static  key word to methods  then  such methods must be  invoked
+WITH OUT CREATING OBJECT(Eg  main method)
+Such methods also  invoked  directly through  class name(Thread.sleep(1000) Math.abs(-2))
+such methods  MUST ACCESS  only static  variables
+u cannot use  this  key word in static  methods
+
+class Employee
+{
+	  
+	int c=10;
+	 public static void main(String[] args) {
+	System.out.println(c); //error
+	}
+}
+
+static  blocks
+
+it is  similiar to static methods  only but   executes  before main  method
+u cannot define  any contructors or methods in static blocks
+gets  memory at class loading time
+MUST ACCESS  only static  variables
+u cannot use  this  key word in static  blocks
+
+syntax
+static
+{
+}
+
+
+Nested  classes
+
+when   a  class is defined/nested  within another class it is  called
+nested  classes
+In this  a class  which  is  used to  nest   another class is called
+outer class
+a class  which  is  defined inside outer  class is called inner/nested  class
+
+syntax
+class Outer   //  top level class
+{
+   int i1=0;
+  class Inner         // nested  class
+{
+    void m()
+{
+ }
+
+}   // inner class closed
+}  // outer class closed
+
+nested class can have  any access specifier
+like  private  public  protected  default  abstaract  static  final
+
+top level class can have   access specifier
+  public  default  abstaract    final
+
+advantages
+since all classes are  specified at  same  location  so it imporoves  mainatainability, readability
+and  code optimization
+nested  classes helps to access all members of  outer classes including  private
+
+types of nested  classes
+1) static  nested classes
+2) non static  nested  classes
+
+2) non static  nested  classes
+if  any class  is defined/nested  inside another  class with out static  key word it is called
+
+"non static nested class"
+it has  3 types
+1) member inner class
+if a  class is defined withn another class but out side of the  outer class method  it is called
+member inner  class
+it can have any access specifier
+like  private  public  protected  default  abstaract    final
+
+class Outer   //  top level class
+{
+   int i1=0;
+void m1(){}
+  class Inner         // nested  class   member  inner class
+{
+    void m()
+{
+ }
+
+}   // inner class closed
+}  // outer class closed
+
+write a  program to invoke  member  inner class  within same class
+
+write a  program to invoke  member  inner class  from out of class
+
+
+
+2) local inner class
+
+if a  class is defined withn another class in side of the  outer class method  it is called
+local inner  class
+it can have only 2 access specifier
+ default      final
+
+
+syntax
+class  Outer
+{
+    private int a=100;
+   void m()
+{
+
+    class Local    // local  inner class
+
+{
+       void  m1()
+{
+}
+}
+}
+}
+rules
+local inner  class  must  be instantiated   within the  scope the  method
+local inner class must be  only final / default access specifiers
+local  variabales  must be  final  / default
+local inner class must access only final / default variables
+
+
+
+3) anonymous  inner class(inheritance)
+
+static nested class
+if  any class  is defined/nested  inside another  class with  static  key word it is called
+static nested class
+advantages
+since all classes are  specified at  same  location  so it imporoves  mainatainability, readability
+and  code optimization
+static nested  classes helps to access only static members of  outer classes including  private
+
+static nested classes can have private public  protected default  final
+static  accessspecifiers
+
+
+create  a class called   Person  with id name and  age
+and  display  use  static blocks
+
+
+

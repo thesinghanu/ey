@@ -1,0 +1,470 @@
+How   to get  user  input   from java  Program?
+following are the  diff   way where     user  can read  i/p from key board
+1) through  Scanner  class
+2) through  io pkg   DataInputStream   class / BufferedReader class/ InputStreamReader class
+
+
+
+through  Scanner  class
+It is present in   java.util pkg
+
+Constructor
+Scanner(InputStream  is)
+here   inputstream  is   keyboard(System.in)
+
+methods
+int  nextInt()   reads  integer
+String next()    reads   String
+String nextLine() reads  String  with  space
+double  nextDouble()   reads    double 
+float  nextFloat()   reads  float
+e.t.c
+
+Loops  supported   by java
+control  statements
+if   if else  if else ladder nested  if
+
+loops
+while   do  while   for   for each   nested   for   for   with  comma   for   with only condition
+
+jump statements
+break  continue  switch case
+
+
+if
+syntax
+
+if(condition)
+{
+   statement;
+}
+
+if   else
+syntax
+
+if(condition)
+{
+   statement;
+}
+else
+{
+   statement;
+}
+
+
+nested if  
+syntax
+
+
+if(condition)
+{
+   statement;
+if( condition)
+{
+    statement;
+}
+else
+{
+
+statement;
+
+}
+}
+else
+{
+statement;
+}
+write  a  program  to read  a first  no
+if  no==1   read  second  no if sencond no==2   display  both are correct
+if  1 no is  correct  but  sencond no is wrong display   second no is incorrect
+if  first  no is  wrong  display  INVALID
+
+if else  ladder
+it evaluates   any  boolean expression
+compred  to swith case  it is  slow
+ syntax
+if(condition)
+{
+  statement;
+}
+esle  if(condtion)
+{
+statemet;
+}
+else
+{
+statement;
+}
+
+
+eneter the   month
+if  month == 11 12 1 2   display  winter
+if month== 3 4 5 6   display  summer
+esle
+display Spring
+
+
+while
+syntax
+while(condition)
+{
+      Body
+}
+here  if the  condition is  not satisfied at  1st  time  only
+then body of loop  will  Not  execute  even  on single  time
+
+
+because in this  condition  is checked at   first 
+
+
+
+do while
+syntax
+do
+{
+      body
+}
+while(condition);
+
+here  if the  condition is  not satisfied at  1st  time  only
+then body of loop  will    execute  atleast  one  time
+
+because in this  condition  is checked at   LAST 
+
+using while  loop  display  10  to 1  no   by   reading i/p  from keyboard
+
+
+
+for   loop
+
+
+synatx
+for(initilaization;  condition; iteration)
+{
+  statement;
+}
+for(;condition;)
+{}
+display  1  to 10  no using    only   for  with condition
+
+
+
+array
+it  is  sequence  of  contiguous  elements  of  same data type
+it is  static   it's   size  is fixed
+u cannot change it's  size at  run time
+it supports  index  based access
+it supports   random  access
+
+type   of  arrys
+single  dimension array
+multi dimension array
+
+
+how  to create  an  array
+
+Single Dimensional  array  
+2 ways
+instantiating and  declaring an array
+int  a[]=new int[3];
+
+initializing and  declaring an array
+String[] a={"2","4","6"};
+
+
+in java  array has  a property called length
+
+for  each loop
+it is  also  called  enhanced   for  loop
+introduced  in jdk 1.5
+syntax
+for(datatype  varname :   array/list)
+{
+    statement;
+}
+
+multi  dimensional array
+instantiating and  declaring an array
+int  a[][]=new int[3][3];
+here  1st  dimension  represents  rows 2nd represents column
+initializing and  declaring an array
+int a[][]={{22,11,44}, {88,33,66}, {1,5,3}}
+
+
+Jump statements
+
+switch case
+
+syntax
+switch(conditicon)
+{
+   case "" :  statement;break;
+case "" :  statement;break;
+case "" :  statement;break;
+case "" :  statement;break;
+default:statement;break;
+}
+
+
+}
+1)  evaluates   boolean  expresssion based on case  values
+
+2)very fast compared to if else ladder as it knows the  data  type of case value
+creates  jump table  inside the  memory
+3)  u can write  / nest  switch  within switch
+4) if  u are  not using nested switch then  the  case values  must be different
+5) break in each case  exits  from switch
+6) case  data  type  must be  int  long byte  short   char  String
+
+
+break
+
+used to break out  from  the  loop
+
+continue  breaks  out  from  current  iteration  but loop continues
+
+display   odd  nos   between  1 to 20  using  continue
+
+Java   does not supports  goto statements
+But u can use  jump statements  like break continue as a goto statement
+
+Syntax
+break   aliasloopname;
+continue aliasloopname;
+
+
+1)write  a  program  to create a  Jagged array
+
+0
+1 2
+3 4 5
+6 7 8 9
+10 11 12 13 14
+
+
+2)  write  a program  to check  entered   no is  ARM STRONG OR  NOT
+
+
+3)  WRITE  program  to generate   10 fibonessi nos
+
+4) write  a  program  to sort  intergers  stored in array  in ascending order
+
+
+Object Oriented Programming IN java
+features of oops
+methods  objects classes
+method overloading
+constructor
+this  static  nested classes
+
+inheritance  types
+method overriding upcasting downcasting
+super init blk  final abstract classes  interfaces   nested  interfaces
+access specifiers  pkgs   
+
+
+dividing  programs  into  different  methods  classes and  objects
+is called  Object  orieneted programing
+it helps to maintain the  program  if program/application grows large
+in oops  global  data  cannot be accessed  from every where
+
+class
+it is a TEMPLATE  FOR  an Object
+it is  blue print for an object
+it is a container  for DATA and Code
+top  level class must have only  public  / default  access specifiers
+
+
+syntax
+
+accessspecifier class classname
+{
+    instancevar;
+   methods(){}
+   blocks{}
+constructors{}
+}
+
+public  class   Abc
+{
+    int k;//  instance var
+   static  int k1=100;  // static  var
+   void m()   // void method
+{}
+    int m1(){}// method  has return type
+    {  System.out.println("Hi");}   init  block
+  Abc(){}    // constructor
+}
+
+In the  above class
+ instancevar;
+   methods(){}
+   blocks{}
+constructors{}  are called
+
+MEMBERS of the class
+
+
+methods
+these contains the business logic
+
+specifies the  behaviiour if the  class / Object
+
+
+2  types  
+non  abstract method  :
+method  which has  implementation/ body
+it is also called  concrete  method
+it has  again 2 types
+1) method does not return  any thing
+syntax
+public  void  add(int a, int b)
+{
+   System.out.println(a+b);
+}
+such  methods  CANNOT be invoked in println statements
+
+2) method  returns  something
+syntax
+public  int  add(int a, int b)
+{
+
+   return a+b;
+}
+such  methods  CAN be invoked in println statements
+and  such methods  must   return  something by spcifying return key word
+
+
+
+
+
+abstract  method
+method  which has EMPTY body OR NO implementation
+
+
+Object
+It is a  real world  entity
+it can be a name of a person thing or place
+it is an instance of a  class
+
+object  has   3 properties
+state  represents  attributes of the objcet
+eg if  laptop is an object  then it's name, price, brand  are called  state of object
+
+behavoiur : represents the  functionality of the Object
+if  mobile is an object then it's  behaviour  would be 
+used for  speaking, calling  ,  browsing, e.t.c
+
+id
+when  object is created  java compiler  provides   one  reference id for each object
+it is  fully qulified class name(pkgname.classname)  with hexadecimal value
+
+how  to create object
+
+using  new key word
+using newInstance() of class Class
+using  clone() method of Object  class
+using  factory method(static  method)
+using anonymous  object
+
+
+using  new keyword
+new keyword  allocates  the  memory  for object  in contigous  memory locations
+it allocates  memory at  run time
+
+Syntax
+class Student
+{
+   int id;
+}
+Student  st;    //  st has  null
+st=new Student()  // now st has  copy of Student class instance variables  like id 
+
+above  2 steps  can be merged to
+Student st=new Student();
+
+
+now   st gets the copy of  instance variables of Student  class
+
+u cann access members  of the  Student  class  using  Object  by dot(.)  operator
+
+
+write a  program  to create a  Student class with id, name and city 
+and  initialize and display
+use  oops   concepts
+
+in the  above program  id name and  city  goes into  heap area
+id1 name1  city1  goes into   stack area
+when insertStudent() method  invocation is over  these are eligible for  gc
+simillarly  student  object also   stored in stack  area
+as  it is local varaible 
+it is also  eligible for  gc  when  main() method  invoked
+
+
+Create  a class called Employee with id, name, des and salary
+and  calculate  netsal by  following  formula
+net=basicsal+da+hra-tax
+
+where   da=150%basicsal
+    hr=30%basicsal
+   tax =1000
+
+
+
+how  to create   anonymous object
+
+Anonymous  objects  means  objects  created  with  out any name
+Compiler  will  assigns  name  for  such  object at the  background
+and   when  any methods are  invoked  from  such objects
+then  after  invocation  of method completes  java  gc automatically
+recollects  memory  for  such objects
+
+such  object  creation  is  called   "object creation ON FLY"
+
+to   access each the  members  of  a class
+every time  u need  to  create  anonymous objcets
+java  bean
+
+It is a reusable  s/w  component  which can be  accessed  from any wahere
+It contains  default constructors setter  methods  and  getter  methods
+
+Setter methods  used  to set the  value
+Getter  methods  used to get the values
+these are used  for  accessing private  fields  from  out side of the Class
+
+class Person
+{
+   int id;
+String name;
+  double salary;
+
+   public  void  setId(int id1)
+{
+      id=id1;
+}
+   public   int   getId()
+{
+    return id;
+}
+
+write  program  to    create  a  Class called
+Product  with id name  categgory and  price
+and  display. Use  Setter and  GETTER methods
+
+
+gayathriravi@mazenetsolution.com
+tna_executive@mazenetsolution.com
+
+WAP to  implement  stack  program
+create    4   menu  items
+1)push2)pop3)display4)exit
+
+use  methods   objcets and loops
+
+
+
+
+
+
+
+

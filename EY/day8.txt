@@ -1,0 +1,425 @@
+Inter Thread Communication
+communication between   threads  is very easy as threads   resided  in the   shared
+memory area  of process
+ALSO  comminication among threads  is  not an expensive
+
+we can achieve  interthread   communication  using   3 methods
+These are  the  methods of Object  class
+public void wait(int millisec) throws  InterruptedException
+
+when  u call a  wait()  on thread   then  that thread   must  leave the  monitor
+or  release  lock on object  and allow  other thread  to enter  into monitor
+or  allow other  thread  to acquire  lock on the object
+
+public void notify()
+
+
+when  u call  a notify() on a thread then  if that  thread  is  in wait state
+then it has  to resume the  execution and  start  getting the  lock  on Object
+
+
+public void notifyAll()
+
+
+when  u call  a notifyAll() on a thread then  if which ever  threads  are  in wait state
+those  all threads  must wake up and  resume  their  execution But  which  threads  gets  CPU
+time  is again depends on CPU schedular
+
+
+Develop  a  mini  banking application   with  deposit and  withdraw functions
+
+using Synchronization and  inter thread  comminication
+
+Creating  thread using Thread  pool
+These  uses  Concurrent  Design Patterns
+Concurrency is  present in java.util.concurrent.* pkg
+
+
+Thread  pool represents the  a   group of    worker threads      that are  
+waiting   for  the  job   and  re used many  times
+
+In case of thread  pool    a    group of  fixed size  thread is  created 
+A thread  from  a  thread pool    is pulled out  and assigned jon  by a
+service provider
+After the completion of the Job   the thread is contained  in the thread pool again
+
+
+How  to create Threads using Thread Pool
+java.util.concurrent.* pkg has  class
+called Executors
+it has  static methods
+ExecutorService  newFixedThreadPoll(int size)
+creates  a Thread  pool of fixed size  size
+
+ExecutorService  newSingleThreadExecutor()
+creates  a Single thread
+
+
+java.util.concurrent.* pkg has  interface
+called  ExecutorService
+method
+void  execute(Runnable  o)
+executes the thread
+
+
+In real  time  this  concept  is used  by servlet and JSP
+
+
+Wrapper  classes
+when  primitive  types  are converted into  objects   these are  called  wrapper 
+classes
+Wrapper  classes are  Internally  final. These are  IMMUTABLE classes
+
+
+
+we have  8 primitive  data types  in java
+
+
+name              wrapper  types
+
+byte                Byte
+short                Short
+int                Integer
+long              Long 
+float            Float
+double            Double 
+boolean           Boolean     
+char                Character
+
+
+Byte  Short  Long  Double  Float  Integer  are  the  sub classes
+of  Number class
+Number class contains  follwoing abstract  methods
+byte byteValue()
+int intValue()
+float floatValue()
+long longValue()
+short shortValue()
+double doubleValue()
+
+above methods converts   wrapper types  to primitive types
+
+                                                                    
+auto boxing
+when primitive  types are converted  into Objects/ wrapper  types 
+it is  called  AUTO BOXING
+
+when WRAPPER  types are converted  into PRIMITIVE  types 
+it is  called  UN BOXING
+
+
+Integer  class
+constructor
+Integer(String s)
+Integer(int i)
+
+methods
+int intValue()
+static String  toBinaryString(int i)
+static String toHexString(int i)
+static String  toOctalString(int i)
+public  static  int  parseInt(String s) throws NumberFormatException
+converts  String to  int
+
+
+
+Double  class
+constructor
+Double(String s)
+Double(double d)
+
+methods
+double doubleValue()
+static boolean   isInfinite(double d)
+static  boolean  isNan(double d)
+public  static  double  parseDouble(String s) throws NumberFormatException
+converts  String to  double
+
+Character  class
+Constructor
+Character(char  c)
+metods
+static  int codePointAt(char[] ,  int index)
+
+static boolean  isDigit(char c)
+static boolean  isLetterOrDigit(char  c)
+
+
+java.util  package
+
+Collection & generics
+Concurrent  collection
+Streams
+Date Time
+
+
+Collection  Framework?
+Collection  :
+It is group of Objects
+
+Framework
+It is  a ready made architecture
+it contains  built in classes and interfaces
+Eg  JUNIT, MOCKITO ,  STRUTS  SPRING  HIBERNATE
+
+Advnatges  of  Collection framework
+
+used to work with  different data types of  elements
+used to work  with   group of objects with  different  data types
+supports  lots of methods  classes and  interfaces
+to perform operations  of  collection elements  like  sorting searching reversing e.t.c
+supports  lots of methods and  interfaces  to traverse the elements of collection
+supports  lots  of  interfaces classes   to  perform   sorting operation 
+on collection elements
+supports lots  of data structures  to store  different elements  of different
+type in different order
+
+Collection  interface
+It's  parent  interface  is Iterable
+It's child interfaces are  List Queue and Set
+
+methods  of Collection  interface
+boolean  add(Object  o)
+adds  one element in collection
+boolean  addAll(Collection c)
+adds  the elements  of one  collection to other
+boolean  remove(Object o)
+removes  one element from  collection
+boolean  removeAll(Collection c)
+remove  the elements  of SPECIFIED collection from  invoking collection
+boolean  retainAll(Collection c)
+remove  the elements  of invoking collection except  specified collection
+boolean  contains(Object o))
+checks  wether  element present in the collection or not?
+int size()  returns  size of collection
+void clear()  removes/deletes  all the elemennts of  collection
+Iterator  iterator()
+returns the Iterator pointer at the top of the collection
+
+
+List  interface
+it  supports   duplicate/null/non generic(all datatype) elements
+O/P is insertion order
+
+
+
+
+
+methods of List Interface
+void  add(int index, Object O)  adds  element at perticular index
+void   add(Object o)    adds  element
+Object remove(Object  o)   removes the element by value
+Object remove(int index)  removes the element  by index
+Object set(int index, Object o)    changes the element value
+int indexOf(Object o)     returns the index of the  element
+ListIterator  listIterator()   traverse the elements  forward and  backword direction
+Object get(int index)  returns the element
+
+e.t.c
+
+
+ArrayList  class
+It  implements  List  interface
+constructor
+ArrayList()
+ArrayList(int size)
+ArrayList(Collection c)
+
+Features
+builds  dynamic array  increase  it's  size at run time
+modification is slow  as schuffling of elements  required
+works at one end
+supports null   generic(same data type element)
+non generic(diff datatype elements) duplicate  elements
+o/p  is insertion order
+it is not synchronized   but  concurrent  operations  cannot be performed
+works  on index  basis   0 to n-1  like Array
+
+Create   array list  of   size of  7  non generic  elements and  perform
+CRUD operation
+
+
+
+create   a  pool   of   5  threads
+which     display  hello world message  10 times
+using  Thread  pool concept
+
+create  a Array  list   10 elements  and  convert into array  and  display
+
+create  a Array  list   10  integers   and   find their sum
+
+note:
+if array list has no type  means  if it contains  non generic elements
+then  type of element  of such array list is  Object
+
+
+
+How many ways  we  can traverse the  elements of the  Collection?
+1)   for loop
+2)  for  each loop
+3) Iterator interface
+4)  ListIterator  interface
+5)   Enumeration (for  legacy classes)
+Iterator interface  used to traverse the elements in  only FORWARD direction
+methods
+void remove()   removes the elements  while iterating
+boolean hasNext()  while  iterating checks  wether  next element is present or not
+this can be done in while loop
+Object next()   while iterating  returs the  element of current iteration  in the  while loop
+
+how to  traverse  the elements  of Collection  using Iterator?
+
+
+ListIterator interface  used to traverse the elements in  only FORWARD&BACKWARD direction
+methods
+void remove()   removes the elements  while iterating
+boolean hasNext()  while  iterating checks  wether  next element is present or not
+this can be done in while loop
+Object next()   while iterating  returs the  element of current iteration  in the  while loop
+boolean  hasPrvious()while  iterating checks  wether  previous element is present or not
+this can be done in while loop
+Object previous() while iterating  returs the previous
+ element of current iteration  in the  while loop
+
+
+how to  traverse  the elements  of Collection  using ListIterator?
+Type  generics
+
+it is introduced  in JDK 1.5
+it creates   Type  Safe  Colections
+advantages
+1) improves type safety
+2) detects  compile time bugs
+3) eliminates  type casting
+
+specified  using <>  Symbol
+Only  String/Wrapper class/USER  defined class names used as Type
+
+Eg
+ArrayList<Integer> al=new ArrayList<Integer>();
+al-->   must contains  only integers
+if u enetered other than int  you will get   compile  time  error
+
+
+w.a. p  to enter  6 names  in   ArrayList and  Remove  index  no 3  element 
+using Iterator's remove() method
+
+
+operations  between  2  collections
+
+
+
+storing the  User  Defined class Objects   in  collection
+
+Create a  Class Student  with id name and  city
+And  store  5 objects  in ArrayList and display
+
+
+LinkedList  class
+It  implements  List  interface
+constructor
+LinkedList()
+LinkedList(int size)
+LinkedList(Collection c)
+
+Features
+builds  dynamic array  increase  it's  size at run time
+modification is FAST  as no schuffling of elements  required
+works at BOTH end. Internally uses DOUBLY   LINKED LIST
+supports null   generic(same data type element)
+non generic(diff datatype elements) duplicate  elements
+o/p  is insertion order
+it is not synchronized   but  concurrent  operations  cannot be performed
+works  on index  basis   0 to n-1  like Array
+
+Contains  same  methods as ArrayList has  
+It also  contians  some extra methods
+
+Object getFirst()
+Object getLast()
+Object  removeFirst()
+Object  removeLast()
+void addFirst(Object o)
+void addLast(Object o)
+Iterator descendingIterator()
+
+
+Vector  class 
+
+It  implements  List  interface
+constructor
+Vector()
+Vector(int size)
+Vector(Collection c)
+Vector(int capacity, int increment)
+
+Features
+builds  dynamic array  increase  it's  size at run time
+
+works at one end. 
+supports null   generic(same data type element)
+non generic(diff datatype elements) duplicate  elements
+o/p  is insertion order
+it is synchronized  i.e  it is thread safe
+   but  concurrent  operations  cannot be performed
+works  on index  basis   0 to n-1  like Array
+it is  a legacy class.
+u can  iterate  elements  of Vector  using
+Iterator and  Enumeration interfaces
+
+methods  
+void  addElement(Object o)
+Object  elementAt(int index)
+Enumeration  elements()
+
+
+int capacity()
+
+Traversing elements  of Vector using Enumeration
+Enumeration interface  has  2 methods
+1) boolean  hasMoreElements()
+ while  traversing, checks  wether  next element is present or not
+this can be done in while loop
+2) Object  nextElement()
+  while traversing  returs the  element of current iteration  in the  while loop
+
+To  get the Enumeration pointer use elements()  method  of Legacy  class
+
+
+Convert  the elements  of ArrayList into Vector
+
+Stack  class 
+
+It  implements  List  interface
+constructor
+Stack()
+
+
+Features
+builds  dynamic array  increase  it's  size at run time
+
+works at one end. 
+supports null   generic(same data type element)
+non generic(diff datatype elements) duplicate  elements
+o/p  is insertion order
+it is synchronized  i.e  it is thread safe
+   but  concurrent  operations  cannot be performed
+works  on index  basis   0 to n-1  like Array
+it is  a legacy class.
+u can  iterate  elements  of Vector  using
+Iterator and  Enumeration interfaces
+
+methods  
+void add(Object o)
+void push(Object o)
+Object  pop()
+Object  peek()   --> top element
+Iterator descendingIterator()
+
+
+wap  to  create   Book  class 
+with id, name  author and  Price
+Insert  5 objects  in LinkedList and  remove  3rd object and  display
+
+
+w.a.p   to   convert   Vector  into Stack

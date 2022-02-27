@@ -1,0 +1,303 @@
+exception Propagation
+the   process  of  transffering   exceptions  from one method  another method
+is  called   Exception Propagation
+
+1)  unchecked exceptions  by default propagated
+2) checked  Exceptions  propagated  by throws  keyword
+
+
+Custom Exceptions
+
+how to create  your own Exception?
+when    we  extend   our class by Throwable/Exception  / RuntimeException class
+then  we can create  our own Exceptions(Custom Exceptions)
+
+If    we  extend   our class by Throwable/Exception 
+class then our Custom Exception  class  contains  both Checked 
+and  unchecked  exceptions
+
+If    we  extend   our class by  RuntimeException class
+then our Custom Exception  class  contains   
+only unchecked  exceptions
+
+write   a program   to  enter  the  age
+if  age is >=18   display you are eligible  to vote
+else  throw  custom exception  called  InValidAgeException  and  Handle it
+
+
+Exception Declaration in method overriding
+
+1) if the  super class  method  does not declare any exception then 
+sub class overridden method  must  declare  only   unchecked  Exception
+and must not declare  checked exception
+
+
+2) if the  super class  method   declare any exception then 
+sub class overridden method  must  declare same or   unchecked  Exception
+and must not declare  checked exception/parent exception
+
+
+
+Multi threading
+
+thread is  part  of a  program   which is  a  saperate  path of execution
+multi  tasking
+
+performing  more that  one  task   concurrently  / parallelly  is called
+
+multi taking
+multi tasking has  2 forms
+1) multi processing
+executing more than  1 program  concurrently is called
+multi processing
+Eg  opening  notepad/eclipse/teams  application/ power point 
+application   parallelly
+
+here  process is   saperate  path  of execution
+process are  havvy wight
+they execute  in saperate  memory area  in os
+inter process  communication  is   expensive
+context  switching  between  2 processes are  not easy to achieve
+
+2) multi threading
+executing more than  1 thread  concurrently is called
+multi threading
+Eg  when  word document is opened 
+if  you  formatting and at the  same time  you give  for  printing
+means  2 threads running parallelly
+
+
+here  thread is   saperate  path  of execution
+threads are  light wight
+they execute  in SHARED   memory area  in Process
+inter thread  communication  is  less   expensive
+context  switching  between  2 thread are  easy to achieve
+
+
+advantages
+it reduces the  creation of IDLE  time
+and  makes  BEST  USE  OF CPU time
+Eg Servlet API it is multi threaded
+
+
+
+Life  Cycle  of Thread
+1.new state
+when the  new object  of the  thread  is created  it is in new state
+2. runnable  state
+when new  thread enters  into ready queue to get  a  job  it is  in Runnable
+state.   in this state   thread  is  not running
+thread  will reach this  state  when   start()  method is called
+3.when  CPU schedular assigns  job  to  thread  then   thread  is  running  reaches to
+running state. It  is  achieved  by calling  run() method
+start() method  calls  run()  method
+4.running  thread  also  suspend it's  operation  temporarily  if i/o  block
+occured/sleep() /wait() called. when  IO block  rectified, sleep() over notify() called
+then waiting thread  resumes it's operation and  again reaches to runnable state
+5 when  thread  finishes it's job  it  is terminated  by reaching to DEAD state
+from  here  again  thread  cannot be started
+
+
+
+Constructors  of Thread  class
+Thread()
+Thread(Runnable r)
+Thread(String s)
+Thread(Runnable r, String s)
+
+methods  of Thread  class
+public   void start()
+creates  a thread  in new call  stack(memory area)
+it calls the  run() method
+public   void run()
+represents behaviour  of the  thread. contains  the  business  logic of thread
+it is  an  entry  point of thread   start() method calls  run() method
+public  static void sleep(int millisec) throws InterruptedException
+supends  the  thread operation  for  specified milli secs
+public String  getName()
+public  String getId()
+public   void setName(String name)
+public  void setPriority(int priority)
+In  java  priorities   for  threads   are meaning less
+execution  of threads  in java  depends  on JVM  implementation
+not on priority basis
+boolean isAlive()   checks wether thread  is runnning or not
+public  int getPriority()
+public  static Thread  currentThread()  returns reference of the  thread
+public  void   resume()   resumes the  operation of thread  which  got suspendend temporarily
+public  void  stop()   stops the operation of thread 
+public  void  suspend()   stops the operation of thread  temporarity
+public  void join() throws InterruptedException  
+waits  untill thread  dies
+public  void interrupt() interrupts  from sleep  if thread is sleeping
+public  boolean  isInterrupted()
+public   void setDaeomon(boolean flag)  creates  Daemon thread
+public  boolean  isDaemon()
+
+
+how  many ways   we can create  a Thread?
+3 ways
+1) by extending  thread  class
+2) by impelementing Runnable  interface
+3)  by using Thread Pool  concurrent design pattern
+
+DIFF  between start() & run() methods
+when you  call start() method  then  each  thread  is created  in saperate memory
+area  which  calls  run() method  and if multile threads  are  running
+they  will  execute  concurrently and  the  performance of the application  is improved
+
+BUT  wastes  lot of resources
+
+when you  call run() method  then  each  thread  is created  in  SAME memory
+area in which  MAIN thread is running  and if multile threads  are  running
+they  will  executes  SEQUNTIALLY  one after  other and
+creates LOT of IDLE  time and   the  performance of the application  is  slow
+
+
+saves  resources
+
+
+write  a program to crate  3  threads   which  displays  1 to 10 no
+by pausing  1 second  after  displaying  each no
+
+
+Creating thread  by  implementing  Runnable  Interface
+Runnable  interface  is  present  in  java.lang  pkg
+it has  ONLY  ONE  method  called   run()
+it is also  called  Functional  interface  in jdk 1.8 
+
+to create  the  thread  using  Runnable interface 
+we need to use  
+Thread(Runnable  r)
+constructor
+
+creating   Threads by impelementing Runnable  Interface has  more advantages  compared
+to creating  Thread   by extending Thread  class
+If u  create  Thread  by implementing Runnable  interface
+then u can save  ur  class for extending  with another  class
+u can also  share  Runnable  object   among multiple threads
+compilation time  is also  less
+
+
+but some  extra  codes  need to be written
+
+write  a  program  to  create  2 thread  by extending thread class
+using ANONYMOUS INNER CLASS
+
+write  a  program  to  create  3 threads which  displays   1 to 6  no
+by  imeplementing  Runnable  interface  using  Anonymous inner class
+
+
+
+Don't call start() method  twice  on same  thread
+U will get  IllgalThreadStateException
+
+
+
+how to control  main thread?
+
+Display the  1 to  5  nos  using main thread
+
+
+interrupt()  method of the Thread  class
+
+when u  call the  interrupt() method of thread class
+if the  thread  is sleeping  then  it's sleep gets  interrupted
+and  cathes  interrupted  Exception but thread  keeps  running
+
+
+if  u  called  the  interrupt() method and  thread  is not sleeping
+then  thread   behaves  normally
+
+
+Daemon Threads
+These are  called  Back Groud Threads
+Performs  Back ground activities  like
+Garbage  Collection
+Anonymous  Objects/class creation  e.t.c
+These  threads  life time depends  on user threads
+When user  threads are  destroyed then daemon thraeds  are also  gets destroyed
+
+
+in  java  if  u want to create  Daemon thread   first   create the Daemon thread
+then call start() method
+If  u  called start() method  and then created  Daemon thread by calling setDaemon() method
+will get IllegalThreadStateException
+
+It is a Low Priority Thread
+U should  not suspend the  daemon thread  by calling sleep or wait methods
+if   u   called  sleep() method  then   deamon threads  gets  permanantly stopped
+
+
+Synchronization
+IN THIS  technique one  thread can  access   one  resource  at a time
+ more than one  thread  can't  access  same resource  concurrently
+
+when  a  thread  gets  an access  to a resource  we can call it  as 
+thread  has  aquired  the  lock/ thread  has   entered  into monitor
+
+when thread leaves the access  from the  resource   we can call it as
+thread  has released  the  lock/ thread  came  out  from the  monitor
+
+
+synchronization  is achieved  using   synhronized  key word
+
+it is applied  to  methods, static  methods and  blocks
+
+
+advantags
+1) consistant result
+2) no thread  interference
+
+dis  advantages
+1)  slow  performance 
+
+when  u  used  synhronized  keyword  to methods  it is  called  method
+synchronization.  i.e  this  method  must  be  access  only  by one thread
+at a time.  This  method  cannot  be accessd by  more  than  one thread 
+Concurrently
+Syntax
+public synchronized   void m()
+{}
+in this   lock  exists  at  Object  level
+
+
+static  synchronization
+when  u  used  synhronized  keyword  to  static methods  it is  called  static
+synchronization.  
+Syntax
+public synchronized static  void m()
+{}
+in this   lock  exists  at  class  level
+
+
+block   synchronization
+
+if you want  to   access  few   lines/blocks  of the  code 
+by  only  one thread  at a  time  u can     use   syncgronized  key word
+to  blocks. It is  called  block  synchronization
+Syntax
+String    s="AJAY";
+
+synchronized(s)
+{
+    code
+}
+
+create  a  class called  table  which  prints  multiplication table from  1 to 10
+using method synchronization and  multi threading  find the  multiplication table  of  3 and  5 no
+
+
+write  a  program  to illustrate  Dead  Lock
+
+when  one thread  is  waiting for   an object lock(object access)that is
+aquired  by (locked by) another thread   and
+second thread    is waiting   for  an  Objcet   lock that is aquired by  first thread.
+since   both threads   are waiting each other  to relase  the  access/lock 
+THIS  CONDITION IS CALLED DEADLOCK
+
+
+sortur2010@gmail.com
+
+
+

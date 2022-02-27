@@ -1,0 +1,488 @@
+Inheritance
+if  one  object aquires  properties and behaviour of another or
+parent  object  it is called  inheritance
+you can achieve  it in java using extends/implements  key words
+in java   multiple  inheritance at class level is not supported because of ambiguity
+
+Eg  class A
+{}
+class B extends  A
+{}
+
+HERE Class  A is  called  super class/base class/parent class
+
+i.e  a  class  which  got inherited
+
+B is called sub class/child class
+i.e.  a class  which  does inheriting
+
+advantages
+used to create  new  classes  with existing class properties
+used  to reuse the  properties  of  it's  super class
+in the   sub class
+types of inheritance
+1)   single  inheritance
+here   one class  extends   another  class
+Eg  class A
+{}
+class B extends  A
+{}
+
+2) multi level inheritance  (chaining)
+
+Eg  
+class A
+{}
+class B extends  A
+{}
+class C extends  B
+{}
+
+
+3) HIERACHICAL INHERITANCE
+ie.  when  more than 1  sub class  extends   same  super class
+Eg  
+class A
+{}
+class B extends  A
+{}
+class C extends  A
+{}
+
+4) multiple inheritance  
+not supported  by class level  (ambiguity)
+when  one  class implements  more than  1 interface
+or
+when  one  interface extends  more than  1 interface
+
+Syntax
+interface A
+{
+}
+interface B
+{}
+class C implements A,B
+{}
+
+or
+Syntax
+interface A
+{
+}
+interface B
+{}
+interface C extends A,B
+{}
+
+
+why ambiguity will occur  im multiple  inheritance at class level in java?
+class A
+{
+    void m()
+{}
+}
+class B
+{
+    void m()
+{}
+}
+class  C extends  A,B
+{
+   MAIN................................
+{
+    C cc=new C();
+    cc.m();   // which  class m() method invoked?
+}}
+
+
+to execute inheritance  programs  if super class & sub classes are written in same 
+program don't save  your program  by super class name
+
+method overriding
+in a  class  hierarchy(IS-A relationship)  when  sub class  has  a same  method name
+and same  method type signature(parameters&return type) as   super class method
+has then  we  say the  sub class method  has OVERRIDDEN  super class method
+
+to  provide saperate  implementation  for  a  sub calss  method which
+is  already defined by super class
+to achive  RUN TIME POLYMORPHISM we use  Method overriding
+
+
+access  specifiers  in method overriding
+in the   method Overriding  always   sub class  overridden  method's
+access  specifier  must have  widest  scope  comapred  to super class
+method
+
+Note:  access specifier's  order  from  very  restricted scope  to widest scope
+
+private  default(no access  specifier)   protected  public
+
+
+static  methods  cannot be overridden
+to invoke  static  methods   no need to create  an Object
+as  u are  invoking static  methods  by the name  of the class
+
+
+annotations  in java
+these  supply  run time  info  to JVM at  run timr
+these  are  applied at  class/method/field/constructor/interface  level
+these  are   introduced  from jdk 1.5
+core  java  annotations are prensent in java.lang  pkg
+these are  specified   with @ symbol
+
+2 types
+1) bulit in 2) custom
+
+built  in annotations
+@Override   @Suppresswarning @Deprecated
+
+@Override
+it is  a method level annotation
+FORCES developer to COMPULSORILY override the method
+
+
+@Suppresswarning 
+method / class level annotation used to  ignore  warnings
+
+@Deprecated
+
+
+method / class level annotation used to  ignore  warnings if  we used deprecated methods]
+
+
+
+up casting
+
+CALL TO overridden method  is resolved at run time rather than compile time is called UPCASTING
+or Dynamic Method Dispatch
+in  this super class reference variable reffers to sub class object
+which  class  object  this  reference variable is  refering that class  overridden  method
+will execute. This  decision will happen at runtime  that is why  it is called  dynamic method dispatch
+
+in this super  class ref variable refers to sub class object
+as sub class has more memory  compare to super class
+
+upcasting will  work only  for  overridden methods
+but it will not workfor     data members/fields
+
+
+advantages
+reduces the  burden on sub class
+
+
+down casting
+
+when sub class  reference var refers  to  super class object  it is  called
+downcasting
+But if you do this  u will get  compile  time  error as  super class has less memory
+compare to sub class
+if  you  type  cast   it you will  get  ClassCastException
+
+Solution:
+1)  u  first  do  upcasting
+2)  then  do down casting
+
+
+super key word
+
+1)  used to refer  a  SUPER  class instance variables
+syntax
+super.instancevariable
+2) used to invoke  super class methods
+super.methodname()
+3)used  to invoke super class constructors
+super()   super(a,b)   ....
+
+Rules
+
+when u are  using  super  to invoke  super  class  constructor
+in  the  sub class  constructor   call to super must be ALWAYS  first statement
+in  sub class constructor  else  u will get compile time error
+
+if u have  only  one  contsructor  in the  program  then   copmpiler
+automatically  adds  super  key word as a first statemenet  in the
+sub class contructor
+
+
+class A
+{
+     a()
+{
+}
+}
+class B extends A
+{
+     B()
+{
+}
+}
+
+WHEN  the above   program   compiles
+class A
+{
+     a()
+{
+}
+}
+class B extends A
+{
+     B()
+{
+super();   // implicitely  supplied by compiler
+}
+}
+
+
+
+
+4) like  this  keyword  super key word  also not used in static  context
+as static is bound to class   super is bound to object
+
+
+
+create  a   super class called A   with  x y  variables
+create  a  sub class   called  B extends  A  with z  variable
+
+find the  sum of 3nos
+
+
+
+using  concept of   inheritance,   super,   method overriding  upcasting
+find the  area of triangle and  rectangle
+
+using  concept of   inheritance,   super,   method overriding  upcasting
+find the  net salary of an employee
+netsal=basicsal+da(150%ofbs)+hra(30%ofbs)-1000tax
+
+
+Instance  Initializer block (init block)
+it is  used to initialize   the  instance  variables
+It  runs each time  when the  Object of the  class is created
+
+
+init block  always  exautes  after the   super() class  contructor called
+init block is created when  instance  of the  class is created
+init blocks comes   in the  order  in which  they appear
+
+
+
+final   key word
+it is applied  to instance variables  methods classes  local variables  and  nested classes
+
+it is  not applied to contructors and  interfaces
+
+
+final to instance  variables
+
+when u apply  final  to instance variables  that  valriable  value cannot be  changed
+It remains costant throug out the  program
+
+
+when u apply  final  to methods  such methods  CANNOT BE  OVERRIDDEN
+when u apply  final  top level class  then  that class  cannot be SUBCLASSED
+Such classes  executes  very fast.  Used to create IMMUTABLE classes
+
+
+final  is also  applied to local  variables
+when u  apply final  to local  variables  those variable values cannot be changed
+
+final  is also  applied to member/local inner class
+
+
+when we  create   a  final  variables  and  not initialized they are called
+"BLANK FINAL VARIABLES"
+Such variables initialized  in "constructors" or "init blocks"
+
+
+when we  create   a  final  variables with  static keyword and  not initialized they are called
+"static BLANK FINAL VARIABLES"
+Such variables initialized  in  static  blocks
+
+abstract  classes and  interfaces
+
+these are  used to achieve  abstration
+
+(i.e  shows  only  functionality and  hides  implementation details)
+
+abstract class
+when  a  class is  declared  with  abstract  key word  it is  called
+
+abstract  class
+It contains  abstract methods and concrete methods
+
+syntax
+abstract  class  abc
+{
+       void m()
+{
+System.out.println("Hi");
+}
+abstract  int h();
+}
+
+
+concrete method:
+a method  which has body   eg
+void m()
+{
+System.out.println("Hi");
+}
+
+abstract method:
+a method  which has  NO body   (empty) contains only definitions
+Syntax
+abstract void m();
+abstract  int h();
+abstract  String  show(String s);
+
+Features
+1) abstract  classes are  called  the  sub classes responsibiliy
+that  abstract  classes   always  extended  by  sub classes  and  override the 
+abstract  methods of abstract class
+2) if any sub class extends  abstract class  either  that class must override the
+abstract method of  abstract class or  declare  again that  sub class as  abstract class
+3) abstract class cannot be INSTANTIATED
+4) if any class contains  abstract method  then that class must be declared as abstract class
+5) it is not mandatory that  abstract class  can contain   at least  one  abstract method
+6) abstract class can contain  contructors  instance variables  constants
+even main method also
+7) abstract class can also  contains  final / static concrete methods
+8)abstract methods  cannot be declared as  final or static
+9) abstract class also  used to  show the implementation  of interface  methods
+10)  abstract class  is   used to achieve  upcasting
+11) abstract class  used  achive  0 to 100%  abstration
+
+Interfaces
+
+interface  A
+{
+      int a=647;
+     void  m();
+    
+}
+interface   lack instance  variables
+it contains  only  abstract methods and  constants
+u cannot  create   object for  interfaces
+interfaces also used in upcasting
+achieves  100% abstrcation
+supports  loose coupling
+supports  multiple  inheritance
+i.e. 1 class  can implement  multiple  interfaces
+1 interface can extend  multiple  interfaces
+Like  abstract class if any sub class implements interface  then that class must override the
+abstract methods of interface  OR  U  can declare  that class as  abstract class
+
+
+syntax
+accessspecifier  interface  interfacename
+{
+      returntype methodname();
+      datatype  varname=value;
+}
+
+2 access specifiers  allowed
+1) public  2) default(no access specifier)
+
+
+
+Eg
+interface  A
+{
+      int a=647;
+     void  m();
+    
+}
+when u compile  above program
+interface  A
+{
+   public  static  final   int a=647;//   public static  final  is added behind constant
+   public  abstract  void  m();// public  abstract  is added behind method
+    
+}
+
+
+note:
+one class  can extend only class
+one  class  can imeplement  multiple interfaces
+one interface  can extend  mutiple interfaces
+
+
+class  cannot implement class
+interface  cannot implement interface
+interface  cannot extend  class
+class cannot extend interface
+
+
+
+TYPES of interfaces
+1)  user  defined  interfaces
+when we create  our own interface  using  interface  key word
+it is called  user  defined interface
+2)  built in interfaces
+java provides  lots of  built in interfaces
+like  in java.util.* pkg we have  Set  List  Queue Map  interfaces
+3) marker  interface
+If  an interface  does not contains  any methods or constants  they are called
+marker inetrface  These provide  RUN time info to JVM at  run time
+Eg  Serializable used in Serialization
+Clonaeble used in  creating duplicate copy of an Object
+4)Functional  interface
+Any interface  which contains  only  one  abstract  method  it is called
+Functional  interface
+It also contains  concrete  default(access specifier) method
+it is created  by @FnctionalInterface annotation
+Introduced  in JDK 1.8
+
+Syntax
+@FunctionalInterface
+interface  inter
+{
+     void m();
+  default  void m1()
+{
+   System.out.pritln("hi");
+}
+}
+
+U can show the  implementations  of  functional interface  methods
+Using "LAMDA EXPRESSIONS" or "METHOD REFERENCES"
+
+eg   of  built in  functional  interface  is
+
+
+Runnable     java.lang pkg
+Comparator   java.util.* pkg
+
+
+create  an  interface stack1 with  push()  pop() and show()  abstract methods
+write stack class  to implement above interface and   perform  stack  operations
+
+
+write  program  to illustrate  abstract  class is used to show the implementaions
+of interface methods
+
+
+write  a program to create   only  one  Object  for the  Class(single ton class)
+use: static  methods/private constructors/static variables
+
+
+declare  the     static  variable   of   class type
+and instantiate that  class in that  variable
+
+create   private  constructor  so that  u cannot create  object
+of that  class  from out side
+
+create  a  static  method 
+in that  u can return  the reference  of  class
+as static  variable
+
+in the  main method create  an object  using  static  method
+(factory  method)
+
+
+ //  this  technique of creating an object is  called factory method
+	   //  means  if u invoked the  static  method from the  class
+	   //  that method  returns the  that  class reference it self
+
+
+
