@@ -1,0 +1,404 @@
+1. What is the output of the following code?
+import java.util.*;
+  
+public class Main 
+{
+  public static void main(String args[]) 
+  {
+    LinkedList<Integer> lang = new LinkedList<Integer>();
+    lang.add(8);
+    lang.add(2);
+    lang.add(1);
+    lang.add(6);
+    Iterator it = lang.iterator();
+    Collections.reverse(lang);
+    Collections.sort(lang);
+    while(it.hasNext())
+      System.out.print(it.next() + " ");
+  }
+}
+A 6 1 2 8
+
+B 1 2 6 8
+
+C 8 6 2 1
+
+D 8 2 1 6
+
+
+
+2. Iterator and ListIterator can iterate through __________
+A List
+
+B Set
+
+C Map
+
+D All the answers are true
+
+
+3.
+Deque and Queue inherit from _____
+A Collection
+
+B AbstractList
+
+C AbstractCollection
+
+D List
+
+
+4.
+ The interface Comparable contains the method ___________
+A toCompare
+
+B compare
+
+C compareTo
+
+D compareWith
+
+
+5.
+The accuracy and efficiency of a HashMap can be guaranteed with:
+
+a.override equals method
+b.override hashCode method
+c.both a & b
+d.none of these
+
+
+6.
+What implementation of Iterator can traverse a collection in both directions?
+
+a.Iterator
+b.ListIterator
+c.SetIterator
+d.MapIterator
+
+
+7.
+What Iterator can throw a ConcurrentModificationException?
+
+a.Fail-fast Iterators
+b.Fail-safe Iterators
+c.Iterators never  throws  Exception
+d.None of these
+
+
+8. Which list class must be preferred in multi-threading environment, considering performance constraint
+
+a.Vector
+b.CopyOnWriteArrayList
+c.ArrayList
+d.ConcurrentArrayList
+
+
+9.
+ What will be the output of the following class?
+
+import java.util.*; 
+class A
+{
+ public static void main(String[] args)
+{
+ HashSet<String> set=new HashSet<String>();
+ set.add(null);
+ set.add("One");
+ for(String s: set)
+   System.out.println(s); 
+}
+}
+ a)  NullPointerException
+ b)  null, One
+ c)  One
+ d)  Compile  Time Error
+
+
+10. What is the output of following Java Program?
+
+
+import java.util.ArrayList;
+class Demo {
+public void show()
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(4);
+        list.add(7);
+        list.add(1);
+        for (int number : list) {
+            System.out.print(number + " ");
+        }
+    }
+} public class Main {
+public static void main(String[] args)
+    {
+        Demo demo = new Demo();
+        demo.show();
+    }
+}
+A. Compilation Error
+B. 4 7 1
+C. 1 4 7
+D. None
+
+11.
+ What will be the output of the following class?
+
+import java.util.*;
+ 
+public class Treeset {
+    public static void main(String[] args)
+    {
+        TreeSet<String> treeSet = new TreeSet<>();
+ 
+        treeSet.add("Geeks");
+        treeSet.add("For");
+        treeSet.add("Geeks");
+        treeSet.add("GeeksforGeeks");
+ 
+        for (String temp : treeSet)
+            System.out.printf(temp + " ");
+ 
+        System.out.println("\n");
+    }
+}
+a) Geeks For Geeks GeeksforGeeks 
+b) Geeks For GeeksforGeeks 
+c) For Geeks GeeksforGeeks 
+d) For GeeksforGeeks Geeks
+
+
+12. What is the output of the following Java Program? 
+ 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+ 
+class Demo {
+public void show()
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("banana");
+        list.add("apple");
+        Iterator itr = list.iterator();
+ 
+        Collections.sort(list);
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+    }
+} public class Main {
+public static void main(String[] args)
+    {
+        Demo demo = new Demo();
+        demo.show();
+    }
+}
+A. Exception in thread “main” java.util.ConcurrentModificationException
+B. apple banana 
+C. banana apple 
+d  compile time error
+
+
+
+13. What is the output of following Java Program?
+
+
+import java.util.ArrayList;
+class Demo {
+public void show()
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        System.out.print(list.get(0));
+    }
+} public class Main {
+public static void main(String[] args)
+    {
+        Demo demo = new Demo();
+        demo.show();
+    }
+}
+A. ArrayIndexOutOfBoundException
+B. IndexOutOfBoundException
+C. null
+D. none of these
+
+
+14
+Which is faster and uses less memory?
+A ListEnumeration
+
+B Iterator
+
+C ListIterator
+
+D Enumeration
+
+
+15
+Which of these is an incorrect form of using the max() method to get the maximum element?
+A max(Collection c, Comparator comp)
+
+B max(Collection c)
+
+C max(Comparator comp)
+
+D max(List c)
+
+Answer
+ C
+
+Q.16 What is true about threads?
+
+a.Threads consumes CPU in best possible manner
+b.Threads enables multi processing.
+c.Multi threading reduces idle time of CPU
+d.All
+
+
+Q17
+How can we create Thread
+
+a.By Extending Thread class
+b.Implementing Runnable interface
+c.By using Executor framework - which can internally form threads
+d.All
+
+
+Q
+18 What state does Thread enter in when it has been created and started?
+
+a.New
+b.Runnable
+c.Running
+d.Waiting
+
+
+Q
+19
+How can you ensure all threads that started from main must end in order in which they started and also main should end in last
+
+a.join() method
+b.sleep() method
+c.wait() method
+d.run() method
+
+
+Q20
+How can Thread go from waiting to runnable state?
+
+a.notify/notifAll
+b.When sleep time is up
+c.Using resume() method when thread was suspended
+d.All
+
+
+
+Q21
+Which of these is valid about threads in java
+
+a.Thread behaviour is unpredictable
+b.execution of Threads depends on Thread scheduler
+c.Same threading program may produce different output in subsequent executions even on same platform
+d.All
+
+
+
+Q22
+What is true about acquiring object lock before calling wait(), notify() and notifyAll()?
+
+a.it’s mandatory to acquire object lock before calling wait(), notify() and notifyAll() methods on object
+b.If we call wait(), notify() and notifyAll() methods without acquiring object lock i.e. from outside synchronize block then java.lang.IllegalMonitorStateException is thrown at runtime.
+c.wait(), notify() and notifyAll() methods are always called from Synchronized block only
+d.all
+
+Q23
+What is difference between starting thread with run() and start() method?
+
+a.There is no difference
+b.When you call start() method, main thread internally calls run() method to start newly created Thread
+c.run() calls start() method internally
+d.None
+
+
+
+
+
+Q 24 What will happen if two threads try to read same resource without synchronization in java
+
+a.It is not allowed in java
+b.It doesn't create any race condition
+c.Will create race condition
+d.None
+
+
+Q 25
+What are valid statements for daemon threads?
+
+a.User created threads are non daemon threads.
+b.JVM can exit when only daemon threads exist in system.
+c.Daemon threads are low priority threads which runs intermittently in background for doing garbage collection.
+d.All of these
+
+
+Q 26
+What will happen if two threads try to write to same resource without synchronization in java
+
+a.It is not allowed in java
+b.It doesn't create any race condition
+c.It will create race condition
+d.None
+
+
+Q 27
+
+How Can we acquire lock on class?
+
+a.By acquiring lock on variables.
+b.By acquiring lock on instance variables.
+c.By acquiring lock on static method
+d.By acquiring lock on instance method
+
+
+Q 28
+What are valid statements for sleep method?
+
+a.when sleep() is called on thread it goes from running to waiting state and can return to runnable state when sleep time is up.
+b.sleep() is a static method, causes the currently executing thread to sleep for the specified number of milliseconds.
+c.thread need not to to acquire object lock before calling sleep() method
+d.All
+
+
+
+Q 29
+
+What is deadlock in java?
+
+a.Deadlock is a situation where two threads on same object are waiting for each other to release lock holded by them on resources
+b.Deadlock is a situation where threads on different object are waiting for each other to release lock holded by them on resources
+c suspension of thread  templorarily
+d.None
+
+
+Q 30
+
+What is maximum thread priority
+
+a.10
+b.12
+c.5
+d.8
+
+
+
+Q31 Which of the following interface does NOT implement the Collection interface?
+A List
+
+B Map
+
+C Set
+
+D None of the above
+
+
